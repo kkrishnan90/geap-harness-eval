@@ -54,6 +54,24 @@ export default function (pi: any) {
     w({ type: "agent_end", messages: msgs.length, stopReason: last?.stopReason, model: last?.model });
   });
   pi.on("session_shutdown", async () => w({ type: "session_shutdown" }));
+  // Vertex AI mode effort: omp's catalog marks google-vertex as rejecting output_config.effort (outdated for
+  // Claude 5.5 rawPredict), so omp drops the level. Re-attach omp's own thinking level to Vertex Claude requests.
+  const EFFORTS = new Set(["low", "medium", "high", "xhigh", "max"]);
+  pi.on("before_provider_request", async (e: any, ctx: any) => {
+    const p = e?.payload;
+    // Called with the Anthropic params before omp's Vertex wrapper adds anthropic_version.
+    const model = String(p?.model ?? ctx?.model?.id ?? "");
+    if (!p || typeof p !== "object" || !Array.isArray(p.messages) || !model.includes("claude")) return undefined;
+    if (!p.thinking || p.thinking.type !== "adaptive" || p.output_config?.effort) {
+      w({ type: "effort_skip", model, thinking: p.thinking?.type ?? null, has_effort: !!p.output_config?.effort });
+      return undefined;
+    }
+    let lvl = ctx?.getThinkingLevel?.() ?? pi?.getThinkingLevel?.() ?? process.env.GEAP_CLAUDE_EFFORT;
+    if (lvl === "minimal") lvl = "low";
+    if (!EFFORTS.has(lvl)) return undefined;
+    w({ type: "effort_attached", effort: lvl });
+    return { ...p, output_config: { ...(p.output_config ?? {}), effort: lvl } };
+  });
 }
 """
 
@@ -61,8 +79,8 @@ ROLE_MAP = {"default": "default", "plan": "plan", "slow": "slow", "smol": "smol"
 
 
 def selector(rr: ResolvedRole) -> str:
-    if rr.provider == "anthropic":
-        return f"google-vertex/{rr.model}@default:{'off' if rr.thinking == 'off' else 'high'}"
+    if rr.provider == "anthropic":  # Vertex AI mode (google-vertex rawPredict); effort re-attached by the extension
+        return f"google-vertex/{rr.model}@default:{rr.thinking}"
     return f"google-vertex/{rr.model}:{rr.thinking}"
 
 
@@ -100,7 +118,8 @@ class Omp(Adapter):
     bin_name = "omp"
     roles_supported = tuple(ROLE_MAP)
     native_multi_model = True
-    thinking_control = "selector :level (Gemini thinkingLevel); Claude adaptive only (Vertex: no effort)"
+    thinking_control = ("selector :level: Gemini thinkingLevel; Claude (Vertex rawPredict) adaptive + output_config.effort "
+                        "re-attached via omp before_provider_request extension")
     meter_mode = "forward proxy (PI_PROXY_GOOGLE_VERTEX + NODE_EXTRA_CA_CERTS)"
 
     def install_latest(self) -> str:
@@ -114,8 +133,8 @@ class Omp(Adapter):
     def model_reason(self, rr: ResolvedRole) -> str | None:
         if rr.provider == "google" and rr.thinking not in ("low", "medium", "high"):
             return f"omp Gemini thinking {rr.thinking!r} unsupported"
-        if rr.provider == "anthropic" and rr.thinking not in ("off", "high"):
-            return "omp on Vertex cannot send Claude effort (catalog: supports-output-effort false); only off/high(adaptive)"
+        if rr.provider == "anthropic" and rr.thinking not in ("off", "low", "medium", "high", "xhigh", "max"):
+            return f"omp Claude effort {rr.thinking!r} unsupported"
         return None
 
     def prepare(self, ctx: AttemptContext) -> LaunchSpec:
@@ -134,6 +153,7 @@ class Omp(Adapter):
             "PI_PROXY_GOOGLE_VERTEX": ctx.meter_proxy,
             "NODE_EXTRA_CA_CERTS": str(ctx.meter_ca),
             "GEAP_MARKER_FILE": str(marker),
+            "GEAP_CLAUDE_EFFORT": next((r.thinking for r in ctx.roles.values() if r.provider == "anthropic"), ""),
         }, path_prepend=[str(bindir)])
         argv = [str(self.bin_path()), "-e", str(ext), "--model", roles["default"]]
         dialogs = [DialogRule("setup-wizard(unexpected)", re.compile(r"Setup step \d+ of \d+"), ["esc"], max_times=1)]

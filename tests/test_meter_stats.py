@@ -81,3 +81,13 @@ def test_verify_thinking():
     assert verify_thinking([{"model": "gemini-4-argon", "provider": "google", "thinking_requested": '{"thinkingLevel": "HIGH"}'}], roles) == "match"
     assert verify_thinking([{"model": "gemini-4-argon", "provider": "google", "thinking_requested": '{"thinkingLevel": "LOW"}'}], roles) == "mismatch"
     assert verify_thinking([{"model": "gemini-4-argon", "provider": "google", "thinking_requested": None}], roles) == "absent"
+
+
+def test_mid_conversation_effort_is_effective():
+    m = Meter(lambda *a: None)
+    body = json.dumps({"messages": [{"role": "user", "content": "hi"}, {"role": "system", "content": [], "output_config": {"effort": "low"}}],
+                       "thinking": {"type": "adaptive"}, "output_config": {"effort": "high"}}).encode()
+    info = m._request_info("v1/projects/test-project/locations/global/publishers/anthropic/models/claude-opus-5-5:streamRawPredict", body)
+    assert '"effective_effort": "low"' in info["thinking_requested"]
+    roles = {"default": ResolvedRole("claude-opus-5-5", "low", "global", "anthropic")}
+    assert verify_thinking([{"model": "claude-opus-5-5", "provider": "anthropic", "thinking_requested": info["thinking_requested"]}], roles) == "match"

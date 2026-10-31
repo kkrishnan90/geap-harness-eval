@@ -489,3 +489,16 @@ Totals show the share of each badge (for example "$412.30 — 97% catalog-verifi
 - **Sonnet 5.5:** enable it in Model Garden for your-gcp-project.
 - **Docker:** a Docker sandbox needs Docker Desktop running; it is installed but stopped.
 - **Billing export:** BigQuery reconciliation (layer 5) is parked.
+
+
+## 17. Capability fixes (Vertex AI mode only)
+Claude is always called in Vertex AI mode (`rawPredict` / `streamRawPredict`), never through the first-party Anthropic API. An earlier experiment with an Anthropic-protocol bridge was removed at the user's request.
+
+| Gap | Fix | Verified on the wire |
+|---|---|---|
+| Pi had no Claude | Community Vertex extension `@pgilad/pi-vertex-anthropic` (Vertex SDK + ADC; reviewed: deps are Anthropic SDK, Vertex SDK and google-auth; network goes to aiplatform only). Installed at its latest version under tools/ | Effective effort low and max match (mid-conversation `output_config`) |
+| omp couldn't send Claude effort | omp extension `before_provider_request` re-attaches omp's own thinking level as `output_config.effort` (omp's catalog rule is outdated for Opus 5.5) | effort low and max present; all 200s |
+| agy sends a budget for Flash | No documented control. `--effort` makes agy ignore `--model` (it ran Argon or 3.7 Flash instead), so it is never passed. Cells stay runnable, labelled "budget" | n/a |
+| dsh has no Claude | Remains N/A: vanilla dsh has only a first-party Anthropic route; custom plugins are out of scope | n/a |
+
+New safeguard: an attempt whose calls never reach the configured model is marked `invalid_model`.

@@ -6,6 +6,8 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -14,6 +16,10 @@ from ..guard import base_env
 from .base import Adapter, AttemptContext, LaunchSpec, PlaneA, ResolvedRole
 
 LEVELS = "off|minimal|low|medium|high|xhigh|max"
+# Claude on Vertex (Vertex AI mode, rawPredict via @anthropic-ai/vertex-sdk + ADC): community Pi extension,
+# reviewed (deps: Anthropic SDK / Vertex SDK / google-auth-library; network: aiplatform.googleapis.com only).
+VERTEX_EXT = "@pgilad/pi-vertex-anthropic"
+CLAUDE_LEVELS = ("low", "medium", "high", "xhigh", "max")
 READY = re.compile(rf"\S+ • ({LEVELS})\s*$", re.M)
 BUSY = re.compile(r"[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏] Working|Working\.\.\.|Retrying")
 
@@ -64,12 +70,24 @@ class Pi(Adapter):
     npm_package = "@earendil-works/pi-coding-agent"
     bin_name = "pi"
     pipeline_switch = True
-    thinking_control = "--model <id>:<level> -> thinkingConfig.thinkingLevel (never thinkingBudget)"
+    thinking_control = ("--model <id>:<level>: Gemini thinkingConfig.thinkingLevel; Claude (Vertex SDK extension) "
+                        "adaptive thinking + output_config.effort, mid-conversation effort keeps the prompt cache")
     meter_mode = "base_url (models.json providers.google-vertex.baseUrl incl. /v1/projects/.../locations/...)"
 
+    def install_latest(self) -> str:
+        v = super().install_latest()
+        subprocess.run(["npm", "install", "--prefix", str(self.prefix), f"{VERTEX_EXT}@latest", "--ignore-scripts",
+                        "--no-fund", "--no-audit"], check=True, capture_output=True, timeout=600)
+        return v
+
+    def ext_path(self) -> Path:
+        return self.prefix / "node_modules" / VERTEX_EXT
+
     def model_reason(self, rr: ResolvedRole) -> str | None:
-        if rr.provider != "google":
-            return "vanilla Pi has no Claude-on-Vertex provider (only a community extension exists)"
+        if rr.provider == "anthropic":
+            if not self.ext_path().exists():
+                return f"Pi Claude-on-Vertex extension {VERTEX_EXT} not installed (geap-eval install pi)"
+            return None if rr.thinking in CLAUDE_LEVELS else f"Pi/Claude effort {rr.thinking!r} unsupported (low..max)"
         if rr.thinking not in ("low", "medium", "high"):
             return f"Pi/Gemini thinking {rr.thinking!r} unsupported (low|medium|high)"
         return None
@@ -88,7 +106,16 @@ class Pi(Adapter):
             shutil.copy2(fd, agent / "bin/fd")
         marker = ctx.artifacts / "pi_marker.jsonl"
         self._sessions = ctx.home / "pi_sessions"
+        extra_env: dict[str, str] = {}
+        if rr.provider == "anthropic":
+            # extension's ADC sentinel skips its /login prompt; the Vertex SDK then reads ADC itself
+            (agent / "auth.json").write_text(json.dumps({"vertex-anthropic": {
+                "type": "oauth", "access": "adc", "refresh": "adc", "expires": int(time.time() * 1000) + 86_400_000,
+                "projectId": PROJECT, "region": rr.location}}))
+            extra_env = {"ANTHROPIC_VERTEX_PROJECT_ID": PROJECT, "CLOUD_ML_REGION": rr.location,
+                         "ANTHROPIC_VERTEX_BASE_URL": f"{ctx.meter_base}/v1"}
         env = base_env(ctx.home, {
+            **extra_env,
             "GOOGLE_CLOUD_LOCATION": rr.location,
             "PI_CODING_AGENT_DIR": str(agent),
             "PI_SKIP_VERSION_CHECK": "1",
@@ -96,15 +123,20 @@ class Pi(Adapter):
             "PI_OFFLINE": "1",
             "GEAP_MARKER_FILE": str(marker),
         })
-        argv = [str(self.bin_path()), "--provider", "google-vertex", "--model", f"{rr.model}:{rr.thinking}",
-                "--session-dir", str(self._sessions)]
+        if rr.provider == "anthropic":
+            argv = [str(self.bin_path()), "-e", str(self.ext_path()), "--provider", "vertex-anthropic",
+                    "--model", f"{rr.model}:{rr.thinking}", "--session-dir", str(self._sessions)]
+        else:
+            argv = [str(self.bin_path()), "--provider", "google-vertex", "--model", f"{rr.model}:{rr.thinking}",
+                    "--session-dir", str(self._sessions)]
         return LaunchSpec(argv=argv, env=env, cwd=ctx.workspace.resolve(), ready=READY, busy=BUSY,
                           quit_keys=["/quit", "enter"], marker=marker,
                           done_counter=lambda: count_events(marker, "agent_settled"))
 
     def switch_model_keys(self, ctx: AttemptContext, role: str) -> list[str] | None:
         rr = ctx.roles[role]
-        return [f"/model google-vertex/{rr.model}", "\r", f"/thinking {rr.thinking}", "\r"]
+        provider = "vertex-anthropic" if rr.provider == "anthropic" else "google-vertex"
+        return [f"/model {provider}/{rr.model}", "\r", f"/thinking {rr.thinking}", "\r"]
 
     def collect(self, ctx: AttemptContext) -> PlaneA:
         pa = PlaneA()

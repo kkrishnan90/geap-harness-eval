@@ -24,6 +24,7 @@ steps:
     args: ["tag", "${_IMAGE}:${BUILD_ID}", "${_IMAGE}:latest"]
 images: ["${_IMAGE}:${BUILD_ID}", "${_IMAGE}:latest"]
 options:
+  dynamicSubstitutions: true
   machineType: E2_HIGHCPU_8
   diskSizeGb: 200
 timeout: 5400s

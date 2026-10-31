@@ -77,7 +77,7 @@ This project answers those questions with:
   - `single`: one model.
   - `native_roles`: the harness's own subagent or role routing.
   - `pipeline`: plan with one model, execute with another, in the same session.
-  - Each role sets its own **thinking level**. Thinking is a first-class benchmark dimension, and the level actually sent is verified from the request on the wire.
+  - Each role sets its own **thinking level**. Thinking is a first-class benchmark dimension, and the level actually sent is verified from the request on the wire. That includes Vertex mid-conversation effort, and the check catches harnesses that swap models.
 - **Models (Oct 2026):**
   - `gemini-4-argon` and `gemini-3.8-flash`: thinking levels LOW, MEDIUM, HIGH;
   - `claude-opus-5-5`: adaptive thinking with effort low … max;
@@ -107,7 +107,7 @@ Start it with `geap-eval serve`, or it opens automatically during `geap-eval run
 - **Step 2, Tasks:** filter by industry, tier and SDLC type, and select tasks.
 - **Step 3, Harnesses:** toggle harnesses and variants (dsh PTC, the dsh native-tools control, dsh ACP). Chips show each harness's capabilities.
 - **Step 4, Model profiles:** for each role, a model and a thinking level. Only levels the model actually accepts are offered.
-- **Dry-run matrix** (right): every task × harness × profile cell, marked runnable or **N/A with the reason** (e.g. "vanilla Pi has no Claude-on-Vertex route").
+- **Dry-run matrix** (right): every task × harness × profile cell, marked runnable or **N/A with the reason** (e.g. "vanilla dsh has no Vertex-mode Claude route").
 - **Cost estimate:** based only on cells with history, and it says how many trials it covers.
 - **Config as code:** the live YAML that the CLI runs identically.
 - In the public deployment the button reads **"Sign in to launch"**, which goes through IAP.
@@ -275,9 +275,13 @@ scripts/          task validator, dashboard verifier
 
 ## Limitations
 - **Feature tickets are precise:** they name exact APIs and outputs, because the hidden tests are exact. That makes them closer to specs than open-ended design problems.
-- **Capability gaps** are shown as N/A, never silently run:
-  - Pi and dsh have no vanilla Claude-on-Vertex route.
-  - omp cannot send Claude effort levels on Vertex.
-  - agy expresses Flash thinking as a budget.
+- **Claude always runs in Vertex AI mode** (the `rawPredict` / `streamRawPredict` path), never the first-party Anthropic API. How each harness gets there:
+  - **Claude Code:** native Vertex mode.
+  - **agy:** native Agent Platform auth.
+  - **Pi:** a reviewed community extension, `@pgilad/pi-vertex-anthropic`, built on `@anthropic-ai/vertex-sdk`. It sends the effort level as Vertex's mid-conversation `output_config`, which the Meter reads as the effective effort.
+  - **omp:** its built-in `google-vertex` provider. omp's catalog wrongly says Vertex rejects `output_config.effort`, so a small omp extension (`before_provider_request`) re-attaches omp's own thinking level. Low through max is verified on the wire.
+  - **dsh:** stays **N/A for Claude**. Vanilla dsh has no Vertex-mode Anthropic route; its Anthropic provider speaks only the first-party API, and custom dsh plugins are out of scope.
+- **agy and Gemini 3.8 Flash:** agy's own catalog sends `thinkingBudget` (1,000 / 4,000 / dynamic tokens), not `thinkingLevel`, and GEAP accepts it. No documented agy setting changes this, and agy's `--effort` flag makes it ignore `--model` and run its default models, so it is never passed. These cells are labelled "budget".
+- **Silent model substitution is caught:** any attempt whose model calls never reach the configured model is marked `invalid_model`, never pass or fail.
 - **Interactive drivers depend on each CLI's screen text and hooks.** Every run installs the latest version, so a release can break a driver. A broken driver shows up as a failed attempt with a recording; it never produces wrong numbers.
 - **Small samples:** pass@k and pass^k need repeats ≥ k. Use `repeats: 3–5` for real comparisons.

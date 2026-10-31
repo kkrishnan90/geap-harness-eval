@@ -25,7 +25,7 @@ from .pty_driver import PtySession
 from .store import Store
 from .tasks import Task, diff_stats, prepare_workspace, select_tasks, verify
 
-TERMINAL_TRIAL = {"passed", "failed", "infra_failed", "invalid_routing", "na", "error"}
+TERMINAL_TRIAL = {"passed", "failed", "infra_failed", "invalid_routing", "invalid_model", "na", "error"}
 COUNTED_ATTEMPT = {"passed", "failed", "error"}
 STATUS_RANK = {"verified": 0, "pt": 0, "check": 1, "unpriced": 2}
 
@@ -326,8 +326,8 @@ class Engine:
                 if a["status"] == "engine_error":
                     self.store.update("trials", tr["id"], status="error", na_reason=(a.get("error") or "")[:300])
                     return
-                if a["status"] == "invalid_routing":
-                    self.store.update("trials", tr["id"], status="invalid_routing", attempts_used=len(counted))
+                if a["status"] in ("invalid_routing", "invalid_model"):
+                    self.store.update("trials", tr["id"], status=a["status"], attempts_used=len(counted))
                     return
                 if a["exit_class"] in ("infra_quota", "infra_auth", "crash_boot"):
                     infra_n += 1
@@ -450,8 +450,8 @@ class Engine:
             metrics = self.compute_metrics(aid, res, plane_a, roles)
             status = "passed" if ver.get("passed") else ("error" if not ver.get("ok") else "failed")
             exit_class = res["exit_class"]
-            if exit_class == "invalid_routing":
-                status = "invalid_routing"
+            if exit_class in ("invalid_routing", "invalid_model"):
+                status = exit_class
             elif exit_class in ("infra_quota", "infra_auth") and not ver.get("passed"):
                 status, infra_failure = "error", True
             upd = dict(metrics, status=status, exit_class=exit_class, t_verified=time.time(), verify_s=ver.get("verify_s"),
@@ -605,6 +605,10 @@ class Engine:
         t_end = max((c["t_end"] for c in timed), default=time.time())
         if spec.plane_b and not calls and exit_class == "ok":
             exit_class, err = "invalid_routing", "no model call reached GEAP through the Meter"
+        elif spec.plane_b and calls and exit_class == "ok" and not timed:
+            # every successful call went to a model that is not configured: the harness silently substituted models
+            seen = sorted({c.get("model") for c in calls})
+            exit_class, err = "invalid_model", f"harness never called the configured model(s); saw {seen}"
         self.store.update("attempts", aid, t_end=t_end, completion_signal=signal_used)
         return {"t0": t0, "t_end": t_end, "exit_class": exit_class, "signal": signal_used, "error": err,
                 "nudges": nudges, "submissions": submissions}
@@ -782,6 +786,8 @@ def verify_thinking(calls: list[dict], roles: dict[str, ResolvedRole]) -> str:
                 verdicts.add("match" if not tr or "disabled" in tr else "mismatch")
             elif not tr:
                 verdicts.add("absent")
+            elif '"effective_effort"' in tr:
+                verdicts.add("match" if f'"effective_effort": "{w}"' in tr else "mismatch")
             elif w == "high" and "adaptive" in tr and "effort" not in tr:
                 verdicts.add("match")  # adaptive thinking with API-default effort (= high)
             else:

@@ -150,6 +150,7 @@ class Agy(Adapter):
             "HTTPS_PROXY": ctx.meter_proxy,
             "SSL_CERT_FILE": str(ctx.meter_ca),
         }, path_prepend=[str(self.bin_path().parent)])
+        # NOTE: never pass --effort: agy 1.4.x then ignores --model and runs its default models (verified on the wire)
         argv = [str(self.bin_path()), "--dangerously-skip-permissions", "--model", label(rr)]
         dialogs = [DialogRule("trust-project", re.compile(r"Do you trust the contents of this project"), ["enter"], max_times=1)]
 

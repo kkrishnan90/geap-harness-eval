@@ -93,11 +93,15 @@ def _check_sa_posture() -> Posture:
     try:
         tok, kind = _token()
         info = httpx.get("https://oauth2.googleapis.com/tokeninfo", params={"access_token": tok}, timeout=15).json()
+        # metadata tokens carry no email claim (no userinfo scope): ask the metadata server who we are
+        email = info.get("email") or httpx.get(
+            "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email",
+            headers={"Metadata-Flavor": "Google"}, timeout=5).text.strip()
     except Exception as e:  # noqa: BLE001
         return Posture(False, adc_type="service_account(metadata)", issues=issues + [f"token mint failed: {e}"])
     if "compute_engine" not in kind:
         issues.append(f"credential source {kind} is not the metadata server")
-    email, exp = info.get("email"), int(info.get("expires_in", 0))
+    exp = int(info.get("expires_in", 0))
     if email != SA_IDENTITY:
         issues.append(f"identity is {email!r}, expected {SA_IDENTITY}")
     if exp > 3600:

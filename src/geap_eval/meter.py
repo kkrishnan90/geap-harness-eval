@@ -110,12 +110,13 @@ class Meter:
         for p in _PROJ_RX.findall("/" + path):
             if p != PROJECT:
                 return JSONResponse({"error": f"project {p} not allowed; only {PROJECT}"}, status_code=403)
-        url = f"https://{host}/{path}"
-        if req.url.query:
-            url += "?" + req.url.query
         body = await req.body()
         headers = {k: v for k, v in req.headers.items() if k.lower() not in HOP}
         headers["accept-encoding"] = "identity"
+        query = req.url.query
+        url = f"https://{host}/{path}"
+        if query:
+            url += "?" + query
         st.seq += 1
         seq = st.seq
         st.inflight += 1
@@ -187,6 +188,12 @@ class Meter:
             info["stream"] = info["stream"] or bool(j.get("stream"))
             info["tools_defined"] = len(j.get("tools") or [])
             th = {k: j[k] for k in ("thinking", "output_config") if k in j}
+            # Vertex mid-conversation config: a per-message output_config overrides the top-level effort
+            # (pi-ai supportsMidConvoEffort). The latest one is the effective effort for this request.
+            mid = [m["output_config"].get("effort") for m in (j.get("messages") or [])
+                   if isinstance(m, dict) and isinstance(m.get("output_config"), dict) and m["output_config"].get("effort")]
+            if mid:
+                th["effective_effort"] = mid[-1]
             info["thinking_requested"] = json.dumps(th, sort_keys=True) if th else None
             msgs = j.get("messages") or []
             if msgs and msgs[-1].get("role") == "user" and isinstance(msgs[-1].get("content"), list):
