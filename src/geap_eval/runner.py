@@ -141,8 +141,14 @@ class Engine:
         return self.meter
 
     # ---------------------------------------------------------- planning
+    def refresh_availability(self) -> None:
+        """Re-read the probe result (a first-boot probe may finish after the engine started)."""
+        if self.avail is None:
+            self.avail = load_availability()
+
     def plan(self, cfg: RunConfig, install: bool = True) -> dict:
         """Build (and persist unless dry) the trial matrix + lock. Idempotent on config hash."""
+        self.refresh_availability()
         tasks = select_tasks(cfg.tasks)
         profiles = expand_profiles(cfg.model_profiles, self.avail)
         run_id = run_id_for(cfg)  # trial ids are content hashes scoped to the run (idempotent resume, no cross-run collisions)
@@ -295,6 +301,7 @@ class Engine:
             return
         ad = get_adapter(tr["harness"], tr["variant"])
         profile = ModelProfile.model_validate_json(tr["profile_json"])
+        self.refresh_availability()
         roles, reason = resolve_roles(profile, self.avail, cfg.geap.location)
         if reason:
             self.store.update("trials", tr["id"], status="na", na_reason=reason)
