@@ -1,0 +1,9 @@
+id = "oem-devices/spsc-ring-buffer-fix"
+version = "1"
+title = "Fix SPSC sensor ring buffer: counter wraparound, full/empty, batch reads and memory ordering"
+industry = "oem-devices"
+tier = "medium"
+sdlc_type = "bug-fix"
+languages = ["c"]
+timeout_s = 600
+requires = ["clang", "make"]

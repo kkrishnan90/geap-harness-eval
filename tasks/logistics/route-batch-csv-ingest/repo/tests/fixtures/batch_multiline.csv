@@ -1,0 +1,4 @@
+stop_id,route_id,seq,postcode,lat,lon,window,parcels,notes
+S-3001,R-21,1,80331,48.1374,11.5755,07:00-09:00,4,"Gate code 4711
+then 2nd floor"
+S-3002,R-21,2,80333,48.1450,11.5650,,2,

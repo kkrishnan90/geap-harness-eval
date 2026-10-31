@@ -1,0 +1,8 @@
+agent_tests_pass_on_reference
+mutant::duplicate_overwrites_first
+mutant::flatline_counts_zeros
+mutant::flatline_needs_extra_slot
+mutant::high_inclusive
+mutant::interpolates_overlong_gaps
+mutant::interpolation_truncates
+mutant::trailing_gap_missed

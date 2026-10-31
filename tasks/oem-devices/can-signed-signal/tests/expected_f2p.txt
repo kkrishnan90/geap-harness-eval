@@ -1,0 +1,11 @@
+signals.intel_signed_physical_negative
+signals.intel_signed_physical_with_offset
+signals.intel_signed_40bit
+signals.intel_signed_33bit_minus_one
+signals.motorola_unsigned_16bit
+signals.motorola_fits_short_frame
+signals.motorola_signed_12bit_crossing
+signals.motorola_signed_24bit
+signals.motorola_signed_64bit
+signals.motorola_start_at_bit0
+signals.motorola_out_of_range

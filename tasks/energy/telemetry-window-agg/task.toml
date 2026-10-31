@@ -1,0 +1,9 @@
+id = "energy/telemetry-window-agg"
+version = "1"
+title = "Event-time tumbling/sliding window aggregation with late events and a bounded ingest buffer"
+industry = "energy"
+tier = "complex"
+sdlc_type = "feature"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

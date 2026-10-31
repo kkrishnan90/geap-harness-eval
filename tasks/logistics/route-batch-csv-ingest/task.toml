@@ -1,0 +1,9 @@
+id = "logistics/route-batch-csv-ingest"
+version = "1"
+title = "Repair the routebatch CI pipeline and the ingest bugs it was hiding"
+industry = "logistics"
+tier = "medium"
+sdlc_type = "ci-repair"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

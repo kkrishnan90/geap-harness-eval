@@ -1,0 +1,9 @@
+id = "oem-devices/can-signed-signal"
+version = "1"
+title = "Fix signed and Motorola (big-endian) CAN signal decoding"
+industry = "oem-devices"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["c"]
+timeout_s = 600
+requires = ["clang", "make"]

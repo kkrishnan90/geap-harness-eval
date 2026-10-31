@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>ACME-20250314-0001</MsgId>
+      <CreDtTm>2025-03-14T09:12:44</CreDtTm>
+      <NbOfTxs>3</NbOfTxs>
+      <CtrlSum>4350.75</CtrlSum>
+      <InitgPty><Nm>ACME Logistics GmbH</Nm></InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>ACME-SUPPLIERS-0314</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <NbOfTxs>2</NbOfTxs>
+      <CtrlSum>3100.75</CtrlSum>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl></PmtTpInf>
+      <ReqdExctnDt><Dt>2025-03-17</Dt></ReqdExctnDt>
+      <Dbtr><Nm>ACME Logistics GmbH</Nm></Dbtr>
+      <DbtrAcct><Id><IBAN>DE89370400440532013000</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>COBADEFFXXX</BICFI></FinInstnId></DbtrAgt>
+      <CdtTrfTxInf>
+        <PmtId><EndToEndId>INV-2025-0412</EndToEndId></PmtId>
+        <Amt><InstdAmt Ccy="EUR">1850.50</InstdAmt></Amt>
+        <CdtrAgt><FinInstnId><BICFI>BNPAFRPPXXX</BICFI></FinInstnId></CdtrAgt>
+        <Cdtr><Nm>Fournitures Martin SARL</Nm></Cdtr>
+        <CdtrAcct><Id><IBAN>FR1420041010050500013M02606</IBAN></Id></CdtrAcct>
+        <RmtInf><Ustrd>Invoice 2025-0412</Ustrd></RmtInf>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId><EndToEndId>INV-2025-0413</EndToEndId></PmtId>
+        <Amt><InstdAmt Ccy="EUR">1250.25</InstdAmt></Amt>
+        <Cdtr><Nm>Pallets Nederland BV</Nm></Cdtr>
+        <CdtrAcct><Id><IBAN>NL91ABNA0417164300</IBAN></Id></CdtrAcct>
+      </CdtTrfTxInf>
+    </PmtInf>
+    <PmtInf>
+      <PmtInfId>ACME-PAYROLL-0314</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>1250.00</CtrlSum>
+      <ReqdExctnDt><Dt>2025-03-17</Dt></ReqdExctnDt>
+      <Dbtr><Nm>ACME Logistics GmbH</Nm></Dbtr>
+      <DbtrAcct><Id><IBAN>DE89370400440532013000</IBAN></Id></DbtrAcct>
+      <CdtTrfTxInf>
+        <PmtId><EndToEndId>SAL-0314-0001</EndToEndId></PmtId>
+        <Amt><InstdAmt Ccy="EUR">1250.00</InstdAmt></Amt>
+        <Cdtr><Nm>J. Novak</Nm></Cdtr>
+        <CdtrAcct><Id><IBAN>AT611904300234573201</IBAN></Id></CdtrAcct>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

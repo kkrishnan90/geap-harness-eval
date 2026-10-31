@@ -1,0 +1,17 @@
+search_params.test.ts:::missing on every parameter type
+search_params.test.ts::_sort on dates with missing values last in both directions
+search_params.test.ts::_sort then _count
+search_params.test.ts::_sort with several keys
+search_params.test.ts::birthdate eq uses the precision of the search value
+search_params.test.ts::birthdate prefixes gt/lt/ge/le/sa/eb/ne
+search_params.test.ts::comma is OR, repeated parameter is AND
+search_params.test.ts::date ranges combine with AND
+search_params.test.ts::invalid values are rejected
+search_params.test.ts::observation dateTime is compared as an instant in UTC
+search_params.test.ts::reference search
+search_params.test.ts::string :contains is case-insensitive substring
+search_params.test.ts::string :exact is case-sensitive full match
+search_params.test.ts::token identifier, _id and case-sensitive codes
+search_params.test.ts::token system|code forms
+search_params.test.ts::unknown parameters are rejected
+search_params.test.ts::unsupported modifiers are rejected

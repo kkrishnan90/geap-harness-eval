@@ -1,0 +1,9 @@
+id = "telecom/cdr-tiered-tariff"
+version = "1"
+title = "Add peak/off-peak tiered tariff rating with billing increments"
+industry = "telecom"
+tier = "medium"
+sdlc_type = "feature"
+languages = ["go"]
+timeout_s = 900
+requires = ["go"]

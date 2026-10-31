@@ -1,0 +1,16 @@
+lib::hex::tests::rejects_bad_input
+lib::hex::tests::roundtrip
+lib::slots::tests::falls_back_after_attempts
+lib::slots::tests::write_and_commit
+lib::version::tests::parse_and_display
+lib::version::tests::parse_errors
+sha256_vectors::nist_short_vectors
+sha256_vectors::million_a
+sha256_vectors::streaming_matches_one_shot
+sha256_vectors::constant_time_compare
+manifest_v1::parses_format1
+manifest_v1::whitespace_comments_and_unknown_keys
+manifest_v1::parse_errors
+manifest_v1::verifies_good_image
+manifest_v1::rejects_wrong_component
+manifest_v1::rejects_truncated_and_corrupt

@@ -1,0 +1,9 @@
+id = "energy/tou-billing"
+version = "1"
+title = "Fix time-of-use band assignment across DST and bill line rounding"
+industry = "energy"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

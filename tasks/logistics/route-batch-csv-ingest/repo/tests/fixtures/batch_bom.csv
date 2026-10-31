@@ -1,0 +1,3 @@
+﻿stop_id,route_id,seq,postcode,lat,lon,window,parcels,notes
+S-1001,R-07,1,44135,51.5136,7.4653,08:00-10:00,3,
+S-1002,R-07,2,44137,51.5089,7.4581,,1,ring twice

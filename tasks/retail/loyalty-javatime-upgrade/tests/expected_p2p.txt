@@ -1,0 +1,3 @@
+EarnAndTierTest.catalog
+EarnAndTierTest.earnsPerWholePound
+EarnAndTierTest.tierThresholds

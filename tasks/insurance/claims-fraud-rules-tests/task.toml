@@ -1,0 +1,9 @@
+id = "insurance/claims-fraud-rules-tests"
+version = "1"
+title = "Write boundary tests for the claims fraud screening rules engine"
+industry = "insurance"
+tier = "medium"
+sdlc_type = "test-authoring"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

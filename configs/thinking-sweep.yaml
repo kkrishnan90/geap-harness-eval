@@ -1,0 +1,6 @@
+run: { name: thinking-sweep, repeats: 3 }
+harnesses: [claude_code, omp, agy]
+model_profiles:
+  - { id: argon, sweep: { model: gemini-4-argon, thinking: all_valid } }
+  - { id: opus,  sweep: { model: claude-opus-5-5, thinking: [low, medium, high, max] } }
+tasks: { include: ["*"], tiers: [simple, medium] }

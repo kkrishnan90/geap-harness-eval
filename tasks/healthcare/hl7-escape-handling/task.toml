@@ -1,0 +1,9 @@
+id = "healthcare/hl7-escape-handling"
+version = "1"
+title = "Fix HL7 v2 escape sequence handling (custom delimiters, hex, escaped escape)"
+industry = "healthcare"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

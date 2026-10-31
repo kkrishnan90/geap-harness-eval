@@ -1,0 +1,12 @@
+# Root-anchored excludes only; task repos contain their own tools/, tests/fixtures/ etc. that MUST ship.
+/.venv
+/runs
+/tools
+/web/node_modules
+/web/dist
+/tests/fixtures
+**/__pycache__
+**/.DS_Store
+/*.cast
+/.env
+!tasks/**

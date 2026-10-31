@@ -1,0 +1,9 @@
+id = "healthcare/patient-matching-perf"
+version = "1"
+title = "Make MPI record linkage sub-quadratic with lossless blocking"
+industry = "healthcare"
+tier = "medium"
+sdlc_type = "performance"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

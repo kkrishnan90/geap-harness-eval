@@ -1,0 +1,9 @@
+id = "insurance/fixed-width-rating-port"
+version = "1"
+title = "Finish the COBOL PRMRATE premium-rating port to Python with byte-exact output"
+industry = "insurance"
+tier = "complex"
+sdlc_type = "upgrade"
+languages = ["python"]
+timeout_s = 900
+requires = ["python3"]

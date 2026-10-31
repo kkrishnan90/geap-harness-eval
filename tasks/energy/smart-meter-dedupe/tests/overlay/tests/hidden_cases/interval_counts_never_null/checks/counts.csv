@@ -1,0 +1,3 @@
+day,actual_intervals,estimated_intervals,ta,te
+2026-03-11,1,0,integer,integer
+2026-03-12,0,1,integer,integer

@@ -1,0 +1,11 @@
+audit_operators.test.ts::audit lines mask the number
+audit_operators.test.ts::registry services
+calendar.test.ts::business days between
+calendar.test.ts::calendar arithmetic
+calendar.test.ts::weekends and bank holidays are not business days
+decision_table.test.ts::mobile: port date window
+handlers.test.ts::bulk: decisions per item
+handlers.test.ts::fixed: same operator
+handlers.test.ts::fixed: valid request is accepted
+handlers.test.ts::mobile: single problems are reported
+handlers.test.ts::mobile: valid request is accepted

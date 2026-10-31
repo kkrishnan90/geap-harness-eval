@@ -1,0 +1,9 @@
+id = "oem-devices/ble-gatt-state-machine"
+version = "1"
+title = "Refactor the BLE connection manager into a table-driven state machine"
+industry = "oem-devices"
+tier = "complex"
+sdlc_type = "refactor"
+languages = ["c"]
+timeout_s = 900
+requires = ["clang", "make"]

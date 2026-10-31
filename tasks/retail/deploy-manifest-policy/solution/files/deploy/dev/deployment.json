@@ -1,0 +1,82 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "checkout",
+    "namespace": "retail-dev",
+    "labels": {
+      "app": "checkout",
+      "team": "checkout"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "checkout",
+        "env": "dev"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "checkout",
+          "tier": "web",
+          "env": "dev"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "checkout",
+            "image": "registry.internal/retail/checkout:2.15.0-rc.3@sha256:adcd5e5241b9398ecfb4ba20fc06df16402d3da18e54709a3f548266f83c3ed7",
+            "ports": [
+              {
+                "name": "http",
+                "containerPort": 8080
+              },
+              {
+                "name": "metrics",
+                "containerPort": 9090
+              }
+            ],
+            "env": [
+              {
+                "name": "PAYMENT_PROVIDER_URL",
+                "value": "https://psp.dev.internal"
+              },
+              {
+                "name": "LOG_LEVEL",
+                "value": "debug"
+              }
+            ],
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "256Mi"
+              },
+              "limits": {
+                "cpu": "1",
+                "memory": "512Mi"
+              }
+            },
+            "livenessProbe": {
+              "httpGet": {
+                "path": "/healthz",
+                "port": "http"
+              },
+              "periodSeconds": 10
+            },
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/ready",
+                "port": "http"
+              },
+              "periodSeconds": 5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

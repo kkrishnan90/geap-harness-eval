@@ -1,0 +1,9 @@
+id = "banking/iban-checksum-bug"
+version = "1"
+title = "Fix IBAN mod-97 validation for lowercase and spaced input"
+industry = "banking"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

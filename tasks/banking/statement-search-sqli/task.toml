@@ -1,0 +1,9 @@
+id = "banking/statement-search-sqli"
+version = "1"
+title = "Fix SQL injection in transaction search while keeping search behaviour"
+industry = "banking"
+tier = "medium"
+sdlc_type = "security"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

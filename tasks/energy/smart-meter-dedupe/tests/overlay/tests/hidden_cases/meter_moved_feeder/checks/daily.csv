@@ -1,0 +1,4 @@
+meter_id,day,feeder_id,wh_total,actual_intervals,estimated_intervals,missing_intervals
+MTR-000901,2026-03-09,FDR-90,410,2,0,94
+MTR-000901,2026-03-10,FDR-91,190,1,0,95
+MTR-000902,2026-03-10,FDR-91,300,0,1,95

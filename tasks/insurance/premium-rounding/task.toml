@@ -1,0 +1,9 @@
+id = "insurance/premium-rounding"
+version = "1"
+title = "Fix premium rounding order and instalment split that does not sum to the total"
+industry = "insurance"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["java"]
+timeout_s = 600
+requires = ["javac"]

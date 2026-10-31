@@ -1,0 +1,13 @@
+TestSingleLegSummer
+TestStatutoryBreak
+TestWaitForReceivingWindowSameDay
+TestWaitForReceivingWindowNextDay
+TestMultiLegWithDwell
+TestUnknownHub
+TestRejectsEmptyRoute
+TestDistanceKm
+TestPlannedDriveRoundsUpToFiveMinutes
+TestDefaultRegistryParses
+TestParseErrors
+TestChargeableKg
+TestLoadingMetresStackable

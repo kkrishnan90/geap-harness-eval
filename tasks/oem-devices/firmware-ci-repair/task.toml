@@ -1,0 +1,9 @@
+id = "oem-devices/firmware-ci-repair"
+version = "1"
+title = "Repair the broken bootcfg-tools CI build (make ci)"
+industry = "oem-devices"
+tier = "simple"
+sdlc_type = "ci-repair"
+languages = ["c", "make"]
+timeout_s = 600
+requires = ["clang", "make"]

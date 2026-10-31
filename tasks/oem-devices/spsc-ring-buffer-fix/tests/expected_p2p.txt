@@ -1,0 +1,15 @@
+ring.init_validates_capacity
+ring.fifo_order
+ring.pop_empty_leaves_output
+ring.batch_within_array
+ring.interleaved_small_lap
+lowpass.first_sample_primes
+lowpass.converges_to_step
+lowpass.alpha_zero_holds
+lowpass.alpha_from_cutoff
+frame.crc_check_value
+frame.roundtrip
+frame.corruption_detected
+frame.bad_arguments
+wrap.empty_after_init
+wrap.max_capacity_accepted

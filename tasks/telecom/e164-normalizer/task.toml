@@ -1,0 +1,9 @@
+id = "telecom/e164-normalizer"
+version = "1"
+title = "Fix E.164 normalisation for international prefixes, NANP and Italian numbers"
+industry = "telecom"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["typescript"]
+timeout_s = 600
+requires = ["node"]

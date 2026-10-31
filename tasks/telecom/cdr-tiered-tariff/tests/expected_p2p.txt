@@ -1,0 +1,9 @@
+TestCDRParseCSV
+TestCDRParseErrors
+TestMoneyParseAndString
+TestMoneyDivRoundHalfUp
+TestMoneyPerMinute
+TestFlatRatesPerSecond
+TestFlatUnknownZone
+TestFlatPlanValidation
+TestZoneLongestPrefix

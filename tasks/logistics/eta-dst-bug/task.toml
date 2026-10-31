@@ -1,0 +1,9 @@
+id = "logistics/eta-dst-bug"
+version = "1"
+title = "Fix line-haul ETAs that are off by an hour across DST transitions"
+industry = "logistics"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["go"]
+timeout_s = 600
+requires = ["go"]

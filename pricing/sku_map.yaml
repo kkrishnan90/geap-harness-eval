@@ -1,0 +1,755 @@
+generated_from: 20261031-d597aa70b6e1.json
+snapshot_sha: d597aa70b6e1
+reviewed: false
+conflicts: []
+entries:
+  claude-opus-5-5|eu|standard|cache_read|gt200k:
+    sku: D085-8E86-4525
+    desc: "Claude Opus 5 5 \u2014 Input Cache Read Tokens \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '2.2E-7'
+    tiered: false
+  claude-opus-5-5|eu|standard|cache_read|lte200k:
+    sku: 834B-A6B1-2214
+    desc: "Claude Opus 5 5 \u2014 Input Cache Read Tokens \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '2.2E-7'
+    tiered: false
+  claude-opus-5-5|eu|standard|cache_write_1h|gt200k:
+    sku: A6B4-136C-F3B5
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000088'
+    tiered: false
+  claude-opus-5-5|eu|standard|cache_write_1h|lte200k:
+    sku: 01AD-6666-DB64
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000088'
+    tiered: false
+  claude-opus-5-5|eu|standard|cache_write_5m|gt200k:
+    sku: 044B-2225-F5F0
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000055'
+    tiered: false
+  claude-opus-5-5|eu|standard|cache_write_5m|lte200k:
+    sku: 97C0-E43E-0298
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000055'
+    tiered: false
+  claude-opus-5-5|eu|standard|input|gt200k:
+    sku: 8CA6-EB36-70D4
+    desc: "Claude Opus 5 5 \u2014 Input Tokens \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-opus-5-5|eu|standard|input|lte200k:
+    sku: AB2D-3219-9C81
+    desc: "Claude Opus 5 5 \u2014 Input Tokens \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-opus-5-5|eu|standard|output|gt200k:
+    sku: 0F76-BE73-6E1B
+    desc: "Claude Opus 5 5 \u2014 Output Tokens \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000022'
+    tiered: false
+  claude-opus-5-5|eu|standard|output|lte200k:
+    sku: E055-9CEE-575C
+    desc: "Claude Opus 5 5 \u2014 Output Tokens \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000022'
+    tiered: false
+  claude-opus-5-5|global|standard|cache_read|gt200k:
+    sku: 0464-FB1C-BB3C
+    desc: "Claude Opus 5 5 \u2014 Input Cache Read Tokens \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: 2E-7
+    tiered: false
+  claude-opus-5-5|global|standard|cache_read|lte200k:
+    sku: 6380-3613-B4B6
+    desc: "Claude Opus 5 5 \u2014 Input Cache Read Tokens \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: 2E-7
+    tiered: false
+  claude-opus-5-5|global|standard|cache_write_1h|gt200k:
+    sku: 7EC8-1033-0ECC
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000008'
+    tiered: false
+  claude-opus-5-5|global|standard|cache_write_1h|lte200k:
+    sku: 1A29-DA05-4DF0
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000008'
+    tiered: false
+  claude-opus-5-5|global|standard|cache_write_5m|gt200k:
+    sku: 67D1-0401-A84B
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000005'
+    tiered: false
+  claude-opus-5-5|global|standard|cache_write_5m|lte200k:
+    sku: 2F56-04E5-B4C9
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000005'
+    tiered: false
+  claude-opus-5-5|global|standard|input|gt200k:
+    sku: 47A2-FD43-7E3F
+    desc: "Claude Opus 5 5 \u2014 Input Tokens \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000004'
+    tiered: false
+  claude-opus-5-5|global|standard|input|lte200k:
+    sku: 4689-5241-F0FD
+    desc: "Claude Opus 5 5 \u2014 Input Tokens \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000004'
+    tiered: false
+  claude-opus-5-5|global|standard|output|gt200k:
+    sku: CD0C-40BD-378E
+    desc: "Claude Opus 5 5 \u2014 Output Tokens \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.00002'
+    tiered: false
+  claude-opus-5-5|global|standard|output|lte200k:
+    sku: 2288-A3C9-A151
+    desc: "Claude Opus 5 5 \u2014 Output Tokens \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.00002'
+    tiered: false
+  claude-opus-5-5|us|standard|cache_read|gt200k:
+    sku: 43D1-1908-2430
+    desc: "Claude Opus 5 5 \u2014 Input Cache Read Tokens \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '2.2E-7'
+    tiered: false
+  claude-opus-5-5|us|standard|cache_read|lte200k:
+    sku: 4688-1EF4-1989
+    desc: "Claude Opus 5 5 \u2014 Input Cache Read Tokens \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '2.2E-7'
+    tiered: false
+  claude-opus-5-5|us|standard|cache_write_1h|gt200k:
+    sku: E4B7-364F-9BBF
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000088'
+    tiered: false
+  claude-opus-5-5|us|standard|cache_write_1h|lte200k:
+    sku: 25C0-097F-CA8D
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000088'
+    tiered: false
+  claude-opus-5-5|us|standard|cache_write_5m|gt200k:
+    sku: 1766-83C7-34E4
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000055'
+    tiered: false
+  claude-opus-5-5|us|standard|cache_write_5m|lte200k:
+    sku: 61DF-25A6-2C31
+    desc: "Claude Opus 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000055'
+    tiered: false
+  claude-opus-5-5|us|standard|input|gt200k:
+    sku: 90F6-253E-AC8A
+    desc: "Claude Opus 5 5 \u2014 Input Tokens \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-opus-5-5|us|standard|input|lte200k:
+    sku: 632B-5B6A-2AE7
+    desc: "Claude Opus 5 5 \u2014 Input Tokens \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-opus-5-5|us|standard|output|gt200k:
+    sku: 9AEF-C4F8-083D
+    desc: "Claude Opus 5 5 \u2014 Output Tokens \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000022'
+    tiered: false
+  claude-opus-5-5|us|standard|output|lte200k:
+    sku: 381F-7B99-A053
+    desc: "Claude Opus 5 5 \u2014 Output Tokens \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000022'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|cache_read|gt200k:
+    sku: 3E63-349C-3AFB
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Read Tokens \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '1.1E-7'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|cache_read|lte200k:
+    sku: 7BBE-AD22-B22E
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Read Tokens \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '1.1E-7'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|cache_write_1h|gt200k:
+    sku: 96DA-D683-835C
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|cache_write_1h|lte200k:
+    sku: 7626-ECDD-F0F5
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|cache_write_5m|gt200k:
+    sku: 6006-129F-4AAF
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.00000275'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|cache_write_5m|lte200k:
+    sku: 96FB-70C6-FF2A
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.00000275'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|input|gt200k:
+    sku: 6219-49C1-D8F5
+    desc: "Claude Sonnet 5 5 \u2014 Input Tokens \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000022'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|input|lte200k:
+    sku: 8A8F-B0E6-488B
+    desc: "Claude Sonnet 5 5 \u2014 Input Tokens \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000022'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|output|gt200k:
+    sku: 5FF0-FC9F-BC3B
+    desc: "Claude Sonnet 5 5 \u2014 Output Tokens \u2014 eu \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000011'
+    tiered: false
+  claude-sonnet-5-5|eu|standard|output|lte200k:
+    sku: 8E7D-DFBA-1C48
+    desc: "Claude Sonnet 5 5 \u2014 Output Tokens \u2014 eu \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000011'
+    tiered: false
+  claude-sonnet-5-5|global|standard|cache_read|gt200k:
+    sku: 90B1-B749-51CA
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Read Tokens \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: 1E-7
+    tiered: false
+  claude-sonnet-5-5|global|standard|cache_read|lte200k:
+    sku: 24CA-67C2-4CCD
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Read Tokens \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: 1E-7
+    tiered: false
+  claude-sonnet-5-5|global|standard|cache_write_1h|gt200k:
+    sku: 9452-4728-9245
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000004'
+    tiered: false
+  claude-sonnet-5-5|global|standard|cache_write_1h|lte200k:
+    sku: 0523-AC4E-2FDA
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000004'
+    tiered: false
+  claude-sonnet-5-5|global|standard|cache_write_5m|gt200k:
+    sku: BD0D-25C3-58CF
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000025'
+    tiered: false
+  claude-sonnet-5-5|global|standard|cache_write_5m|lte200k:
+    sku: 934D-58AD-F15F
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000025'
+    tiered: false
+  claude-sonnet-5-5|global|standard|input|gt200k:
+    sku: D1BB-380D-5DD8
+    desc: "Claude Sonnet 5 5 \u2014 Input Tokens \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000002'
+    tiered: false
+  claude-sonnet-5-5|global|standard|input|lte200k:
+    sku: 6712-0BCD-E7FB
+    desc: "Claude Sonnet 5 5 \u2014 Input Tokens \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000002'
+    tiered: false
+  claude-sonnet-5-5|global|standard|output|gt200k:
+    sku: A8FE-6C6F-4400
+    desc: "Claude Sonnet 5 5 \u2014 Output Tokens \u2014 global \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.00001'
+    tiered: false
+  claude-sonnet-5-5|global|standard|output|lte200k:
+    sku: FBD8-39ED-71E0
+    desc: "Claude Sonnet 5 5 \u2014 Output Tokens \u2014 global \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.00001'
+    tiered: false
+  claude-sonnet-5-5|us|standard|cache_read|gt200k:
+    sku: A22C-7201-5909
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Read Tokens \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '1.1E-7'
+    tiered: false
+  claude-sonnet-5-5|us|standard|cache_read|lte200k:
+    sku: 3C1D-A209-508C
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Read Tokens \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '1.1E-7'
+    tiered: false
+  claude-sonnet-5-5|us|standard|cache_write_1h|gt200k:
+    sku: 5408-786F-4AF5
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-sonnet-5-5|us|standard|cache_write_1h|lte200k:
+    sku: 93B2-88AA-0AC8
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 3600 seconds) \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000044'
+    tiered: false
+  claude-sonnet-5-5|us|standard|cache_write_5m|gt200k:
+    sku: C0FC-A03D-2B1E
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.00000275'
+    tiered: false
+  claude-sonnet-5-5|us|standard|cache_write_5m|lte200k:
+    sku: D52E-2F9F-BD59
+    desc: "Claude Sonnet 5 5 \u2014 Input Cache Write Tokens (TTL 300 seconds) \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.00000275'
+    tiered: false
+  claude-sonnet-5-5|us|standard|input|gt200k:
+    sku: 42DF-410C-5D56
+    desc: "Claude Sonnet 5 5 \u2014 Input Tokens \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.0000022'
+    tiered: false
+  claude-sonnet-5-5|us|standard|input|lte200k:
+    sku: 35A4-BE77-EC9A
+    desc: "Claude Sonnet 5 5 \u2014 Input Tokens \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.0000022'
+    tiered: false
+  claude-sonnet-5-5|us|standard|output|gt200k:
+    sku: 5041-56C6-F61A
+    desc: "Claude Sonnet 5 5 \u2014 Output Tokens \u2014 us \u2014 Context Window Size from 200001 to 1000000 Tokens"
+    usd_per_token: '0.000011'
+    tiered: false
+  claude-sonnet-5-5|us|standard|output|lte200k:
+    sku: A8D0-D023-59BC
+    desc: "Claude Sonnet 5 5 \u2014 Output Tokens \u2014 us \u2014 Context Window Size from 0 to 200000 Tokens"
+    usd_per_token: '0.000011'
+    tiered: false
+  gemini-3.1-flash-lite|global|batch|cache_read|all:
+    sku: E65B-533B-92B7
+    desc: Gemini 3.1 Flash Lite Global Text Input Caching Batch
+    usd_per_token: '1.2E-8'
+    tiered: false
+  gemini-3.1-flash-lite|global|batch|input|all:
+    sku: 2909-8C9F-2D43
+    desc: Gemini 3.1 Flash Lite Global Text Input - Batch Predictions
+    usd_per_token: '1.25E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|batch|output|all:
+    sku: B8AC-4BEE-5EA4
+    desc: Gemini 3.1 Flash Lite Global Text Output - Batch Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|deferred|cache_read|all:
+    sku: 392A-864A-CECF
+    desc: Gemini 3.1 Flash Lite Global Text Input Caching Deferred
+    usd_per_token: '1.2E-8'
+    tiered: false
+  gemini-3.1-flash-lite|global|deferred|input|all:
+    sku: 08AA-0B38-6D36
+    desc: Gemini 3.1 Flash Lite Global Text Input - Deferred Predictions
+    usd_per_token: '1.25E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|deferred|output|all:
+    sku: 1274-C683-AAA2
+    desc: Gemini 3.1 Flash Lite Global Text Output - Deferred Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|flex|cache_read|all:
+    sku: 2B30-F90F-79C8
+    desc: Gemini 3.1 Flash Lite Global Text Input Caching Flex
+    usd_per_token: '1.2E-8'
+    tiered: false
+  gemini-3.1-flash-lite|global|flex|input|all:
+    sku: 9464-F1C2-094C
+    desc: Gemini 3.1 Flash Lite Global Text Input Flex - Predictions
+    usd_per_token: '1.25E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|flex|output|all:
+    sku: 071D-38E8-00A3
+    desc: Gemini 3.1 Flash Lite Global Text Output Flex - Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|priority|cache_read|all:
+    sku: 7AF9-F057-F967
+    desc: Gemini 3.1 Flash Lite Global Text Input Caching Priority
+    usd_per_token: '4.5E-8'
+    tiered: false
+  gemini-3.1-flash-lite|global|priority|input|all:
+    sku: 2EF6-1ED2-B769
+    desc: Gemini 3.1 Flash Lite Global Text Input Priority - Predictions
+    usd_per_token: '4.5E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|priority|output|all:
+    sku: D58C-90C8-A2CC
+    desc: Gemini 3.1 Flash Lite Global Text Output Priority - Predictions
+    usd_per_token: '0.0000027'
+    tiered: false
+  gemini-3.1-flash-lite|global|standard|cache_read|all:
+    sku: A0D7-CE97-949A
+    desc: Gemini 3.1 Flash Lite Global Text Input Caching
+    usd_per_token: '2.5E-8'
+    tiered: false
+  gemini-3.1-flash-lite|global|standard|input|all:
+    sku: 7DDF-162F-B3F3
+    desc: Gemini 3.1 Flash Lite Global Text Input - Predictions
+    usd_per_token: '2.5E-7'
+    tiered: false
+  gemini-3.1-flash-lite|global|standard|output|all:
+    sku: DA75-5E07-40DC
+    desc: Gemini 3.1 Flash Lite Global Text Output - Predictions
+    usd_per_token: '0.0000015'
+    tiered: false
+  gemini-3.1-flash-lite|regional|batch|cache_read|all:
+    sku: BEEB-48D2-45F2
+    desc: Gemini 3.1 Flash Lite Regional Text Input Caching Batch
+    usd_per_token: '1.3E-8'
+    tiered: false
+  gemini-3.1-flash-lite|regional|batch|input|all:
+    sku: 8194-34EF-1505
+    desc: Gemini 3.1 Flash Lite Regional Text Input - Batch Predictions
+    usd_per_token: '1.37E-7'
+    tiered: false
+  gemini-3.1-flash-lite|regional|batch|output|all:
+    sku: 6400-0E7F-3F16
+    desc: Gemini 3.1 Flash Lite Regional Text Output - Batch Predictions
+    usd_per_token: '8.25E-7'
+    tiered: false
+  gemini-3.1-flash-lite|regional|flex|cache_read|all:
+    sku: DC08-7C6D-992B
+    desc: Gemini 3.1 Flash Lite Regional Text Input Caching Flex
+    usd_per_token: '1.3E-8'
+    tiered: false
+  gemini-3.1-flash-lite|regional|flex|input|all:
+    sku: 0B02-4C7A-4940
+    desc: Gemini 3.1 Flash Lite Regional Text Input Flex - Predictions
+    usd_per_token: '1.37E-7'
+    tiered: false
+  gemini-3.1-flash-lite|regional|flex|output|all:
+    sku: 7B9F-B55C-2D23
+    desc: Gemini 3.1 Flash Lite Regional Text Output Flex - Predictions
+    usd_per_token: '8.25E-7'
+    tiered: false
+  gemini-3.1-flash-lite|regional|priority|cache_read|all:
+    sku: 5C52-ED35-4FB1
+    desc: Gemini 3.1 Flash Lite Regional Text Input Caching Priority
+    usd_per_token: '4.9E-8'
+    tiered: false
+  gemini-3.1-flash-lite|regional|priority|input|all:
+    sku: 9F22-1AC6-6ACE
+    desc: Gemini 3.1 Flash Lite Regional Text Input Priority - Predictions
+    usd_per_token: '4.95E-7'
+    tiered: false
+  gemini-3.1-flash-lite|regional|priority|output|all:
+    sku: AAAB-7BF7-1A75
+    desc: Gemini 3.1 Flash Lite Regional Text Output Priority - Predictions
+    usd_per_token: '0.00000297'
+    tiered: false
+  gemini-3.1-flash-lite|regional|standard|cache_read|all:
+    sku: C1D2-D407-6214
+    desc: Gemini 3.1 Flash Lite Regional Text Input Caching
+    usd_per_token: '2.7E-8'
+    tiered: false
+  gemini-3.1-flash-lite|regional|standard|input|all:
+    sku: 35D1-0973-0F96
+    desc: Gemini 3.1 Flash Lite Regional Text Input - Predictions
+    usd_per_token: '2.75E-7'
+    tiered: false
+  gemini-3.1-flash-lite|regional|standard|output|all:
+    sku: 4476-E8B6-F0E6
+    desc: Gemini 3.1 Flash Lite Regional Text Output - Predictions
+    usd_per_token: '0.00000165'
+    tiered: false
+  gemini-3.8-flash|global|batch|cache_read|all:
+    sku: C5D0-D80B-6D73
+    desc: Gemini 3.8 Flash Global Text Input Caching Batch
+    usd_per_token: '7.5E-8'
+    tiered: false
+  gemini-3.8-flash|global|batch|input|all:
+    sku: 040C-CF2F-2F36
+    desc: Gemini 3.8 Flash Global Text Input - Batch Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.8-flash|global|batch|output|all:
+    sku: 0751-33AC-0D5E
+    desc: Gemini 3.8 Flash Global Text Output - Batch Predictions
+    usd_per_token: '0.00000375'
+    tiered: false
+  gemini-3.8-flash|global|deferred|cache_read|all:
+    sku: D60C-258B-965B
+    desc: Gemini 3.8 Flash Global Text Input Caching Deferred
+    usd_per_token: '7.5E-8'
+    tiered: false
+  gemini-3.8-flash|global|deferred|input|all:
+    sku: 75C3-B73D-70CB
+    desc: Gemini 3.8 Flash Global Text Input - Deferred Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.8-flash|global|deferred|output|all:
+    sku: C148-337F-E45C
+    desc: Gemini 3.8 Flash Global Text Output - Deferred Predictions
+    usd_per_token: '0.00000375'
+    tiered: false
+  gemini-3.8-flash|global|flex|cache_read|all:
+    sku: 4390-A2ED-C406
+    desc: Gemini 3.8 Flash Global Text Input Caching Flex
+    usd_per_token: '7.5E-8'
+    tiered: false
+  gemini-3.8-flash|global|flex|input|all:
+    sku: 26EC-00C3-953E
+    desc: Gemini 3.8 Flash Global Text Input Flex - Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.8-flash|global|flex|output|all:
+    sku: 248C-A56D-DA65
+    desc: Gemini 3.8 Flash Global Text Output Flex - Predictions
+    usd_per_token: '0.00000375'
+    tiered: false
+  gemini-3.8-flash|global|offpeak|cache_read|all:
+    sku: 4904-EA7D-7947
+    desc: Gemini 3.8 Flash Global Text Input Caching Off-Peak
+    usd_per_token: '7.5E-8'
+    tiered: false
+  gemini-3.8-flash|global|offpeak|input|all:
+    sku: B65C-8874-2AAC
+    desc: Gemini 3.8 Flash Global Text Input - Off-Peak Predictions
+    usd_per_token: '7.5E-7'
+    tiered: false
+  gemini-3.8-flash|global|offpeak|output|all:
+    sku: 6A6A-1AFF-3EF5
+    desc: Gemini 3.8 Flash Global Text Output - Off-Peak Predictions
+    usd_per_token: '0.00000375'
+    tiered: false
+  gemini-3.8-flash|global|priority|cache_read|all:
+    sku: 895C-D13B-D9EB
+    desc: Gemini 3.8 Flash Global Text Input Caching Priority
+    usd_per_token: '2.7E-7'
+    tiered: false
+  gemini-3.8-flash|global|priority|input|all:
+    sku: 8C96-DE14-D3C8
+    desc: Gemini 3.8 Flash Global Text Input Priority - Predictions
+    usd_per_token: '0.0000027'
+    tiered: false
+  gemini-3.8-flash|global|priority|output|all:
+    sku: 3EF2-D8C5-4752
+    desc: Gemini 3.8 Flash Global Text Output Priority - Predictions
+    usd_per_token: '0.0000135'
+    tiered: false
+  gemini-3.8-flash|global|standard|cache_read|all:
+    sku: 8658-6939-8BEC
+    desc: Gemini 3.8 Flash Global Text Input Caching
+    usd_per_token: '1.5E-7'
+    tiered: false
+  gemini-3.8-flash|global|standard|input|all:
+    sku: 2A35-AC68-14D6
+    desc: Gemini 3.8 Flash Global Text Input - Predictions
+    usd_per_token: '0.0000015'
+    tiered: false
+  gemini-3.8-flash|global|standard|output|all:
+    sku: 90FD-DC5F-DC55
+    desc: Gemini 3.8 Flash Global Text Output - Predictions
+    usd_per_token: '0.0000075'
+    tiered: false
+  gemini-3.8-flash|regional|batch|cache_read|all:
+    sku: 2E18-17C5-1FEF
+    desc: Gemini 3.8 Flash Regional Text Input Caching Batch
+    usd_per_token: '8.2E-8'
+    tiered: false
+  gemini-3.8-flash|regional|batch|input|all:
+    sku: 26F4-48A2-64CF
+    desc: Gemini 3.8 Flash Regional Text Input - Batch Predictions
+    usd_per_token: '8.25E-7'
+    tiered: false
+  gemini-3.8-flash|regional|batch|output|all:
+    sku: ED69-EC6D-F0C8
+    desc: Gemini 3.8 Flash Regional Text Output - Batch Predictions
+    usd_per_token: '0.000004125'
+    tiered: false
+  gemini-3.8-flash|regional|flex|cache_read|all:
+    sku: 1A80-9293-A594
+    desc: Gemini 3.8 Flash Regional Text Input Caching Flex
+    usd_per_token: '8.2E-8'
+    tiered: false
+  gemini-3.8-flash|regional|flex|input|all:
+    sku: 1A20-F241-F344
+    desc: Gemini 3.8 Flash Regional Text Input Flex - Predictions
+    usd_per_token: '8.25E-7'
+    tiered: false
+  gemini-3.8-flash|regional|flex|output|all:
+    sku: DFEA-2F41-2293
+    desc: Gemini 3.8 Flash Regional Text Output Flex - Predictions
+    usd_per_token: '0.000004125'
+    tiered: false
+  gemini-3.8-flash|regional|offpeak|cache_read|all:
+    sku: CA99-D5D6-6676
+    desc: Gemini 3.8 Flash Regional Text Input Caching Off-Peak
+    usd_per_token: '8.2E-8'
+    tiered: false
+  gemini-3.8-flash|regional|offpeak|input|all:
+    sku: 6B41-483B-19B4
+    desc: Gemini 3.8 Flash Regional Text Input - Off-Peak Predictions
+    usd_per_token: '8.25E-7'
+    tiered: false
+  gemini-3.8-flash|regional|offpeak|output|all:
+    sku: 3F73-BE4F-9D07
+    desc: Gemini 3.8 Flash Regional Text Output - Off-Peak Predictions
+    usd_per_token: '0.000004125'
+    tiered: false
+  gemini-3.8-flash|regional|priority|cache_read|all:
+    sku: EB7B-5386-C642
+    desc: Gemini 3.8 Flash Regional Text Input Caching Priority
+    usd_per_token: '2.97E-7'
+    tiered: false
+  gemini-3.8-flash|regional|priority|input|all:
+    sku: 8695-3BAB-3E62
+    desc: Gemini 3.8 Flash Regional Text Input Priority - Predictions
+    usd_per_token: '0.00000297'
+    tiered: false
+  gemini-3.8-flash|regional|priority|output|all:
+    sku: 1799-5A4B-E073
+    desc: Gemini 3.8 Flash Regional Text Output Priority - Predictions
+    usd_per_token: '0.00001485'
+    tiered: false
+  gemini-3.8-flash|regional|standard|cache_read|all:
+    sku: 59CA-8986-F33C
+    desc: Gemini 3.8 Flash Regional Text Input Caching
+    usd_per_token: '1.65E-7'
+    tiered: false
+  gemini-3.8-flash|regional|standard|input|all:
+    sku: 1C52-4B3A-E3E7
+    desc: Gemini 3.8 Flash Regional Text Input - Predictions
+    usd_per_token: '0.00000165'
+    tiered: false
+  gemini-3.8-flash|regional|standard|output|all:
+    sku: 8C46-0EC8-54F9
+    desc: Gemini 3.8 Flash Regional Text Output - Predictions
+    usd_per_token: '0.00000825'
+    tiered: false
+  gemini-4-argon|global|batch|cache_read|all:
+    sku: 35A1-3683-FDEF
+    desc: Gemini 4 Argon Global Text Input Caching Batch
+    usd_per_token: 1E-7
+    tiered: false
+  gemini-4-argon|global|batch|input|all:
+    sku: 125F-9BCB-6E25
+    desc: Gemini 4 Argon Global Text Input - Batch Predictions
+    usd_per_token: '0.000002'
+    tiered: false
+  gemini-4-argon|global|batch|output|all:
+    sku: 8C23-E400-C0B7
+    desc: Gemini 4 Argon Global Text Output - Batch Predictions
+    usd_per_token: '0.00001'
+    tiered: false
+  gemini-4-argon|global|deferred|cache_read|all:
+    sku: 14A6-5C2C-A055
+    desc: Gemini 4 Argon Global Text Input Caching Deferred
+    usd_per_token: 1E-7
+    tiered: false
+  gemini-4-argon|global|deferred|input|all:
+    sku: 9C40-4523-04E2
+    desc: Gemini 4 Argon Global Text Input - Deferred Predictions
+    usd_per_token: '0.000002'
+    tiered: false
+  gemini-4-argon|global|deferred|output|all:
+    sku: C90C-F3F3-3BDE
+    desc: Gemini 4 Argon Global Text Output - Deferred Predictions
+    usd_per_token: '0.00001'
+    tiered: false
+  gemini-4-argon|global|flex|cache_read|all:
+    sku: 080D-EDF7-2EAF
+    desc: Gemini 4 Argon Global Text Input Caching Flex
+    usd_per_token: 1E-7
+    tiered: false
+  gemini-4-argon|global|flex|input|all:
+    sku: 90E1-993E-0121
+    desc: Gemini 4 Argon Global Text Input - Flex Predictions
+    usd_per_token: '0.000002'
+    tiered: false
+  gemini-4-argon|global|flex|output|all:
+    sku: 13FE-0A81-96E7
+    desc: Gemini 4 Argon Global Text Output - Flex Predictions
+    usd_per_token: '0.00001'
+    tiered: false
+  gemini-4-argon|global|offpeak|cache_read|all:
+    sku: 83EE-5623-4C35
+    desc: Gemini 4 Argon Global Text Input Caching Offpeak
+    usd_per_token: 1E-7
+    tiered: false
+  gemini-4-argon|global|offpeak|input|all:
+    sku: 6326-B613-6D77
+    desc: Gemini 4 Argon Global Text Input - Offpeak Predictions
+    usd_per_token: '0.000002'
+    tiered: false
+  gemini-4-argon|global|offpeak|output|all:
+    sku: 7D57-46BF-3CB9
+    desc: Gemini 4 Argon Global Text Output - Offpeak Predictions
+    usd_per_token: '0.00001'
+    tiered: false
+  gemini-4-argon|global|priority|cache_read|all:
+    sku: 0142-10EE-D127
+    desc: Gemini 4 Argon Global Text Input Caching Priority
+    usd_per_token: '3.6E-7'
+    tiered: false
+  gemini-4-argon|global|priority|input|all:
+    sku: CCEE-2667-22C3
+    desc: Gemini 4 Argon Global Text Input - Priority Predictions
+    usd_per_token: '0.0000072'
+    tiered: false
+  gemini-4-argon|global|priority|output|all:
+    sku: A079-4D7D-7B12
+    desc: Gemini 4 Argon Global Text Output - Priority Predictions
+    usd_per_token: '0.000036'
+    tiered: false
+  gemini-4-argon|global|standard|cache_read|all:
+    sku: 3B3E-7322-E883
+    desc: Gemini 4 Argon Global Text Input Caching Online
+    usd_per_token: 2E-7
+    tiered: false
+  gemini-4-argon|global|standard|input|all:
+    sku: 3BAE-62B7-C9B9
+    desc: Gemini 4 Argon Global Text Input - Online Predictions
+    usd_per_token: '0.000004'
+    tiered: false
+  gemini-4-argon|global|standard|output|all:
+    sku: 1E84-F91D-8B95
+    desc: Gemini 4 Argon Global Text Output - Online Predictions
+    usd_per_token: '0.00002'
+    tiered: false
+  gemini-4-argon|regional|batch|cache_read|all:
+    sku: AF09-3F41-5660
+    desc: Gemini 4 Argon Regional Text Input Caching Batch
+    usd_per_token: '1.1E-7'
+    tiered: false
+  gemini-4-argon|regional|batch|input|all:
+    sku: FE53-F128-6B7C
+    desc: Gemini 4 Argon Regional Text Input - Batch Predictions
+    usd_per_token: '0.0000022'
+    tiered: false
+  gemini-4-argon|regional|batch|output|all:
+    sku: D6F9-3511-6CC9
+    desc: Gemini 4 Argon Regional Text Output - Batch Predictions
+    usd_per_token: '0.000011'
+    tiered: false
+  gemini-4-argon|regional|flex|cache_read|all:
+    sku: 77BB-33DD-966E
+    desc: Gemini 4 Argon Regional Text Input Caching Flex
+    usd_per_token: '1.1E-7'
+    tiered: false
+  gemini-4-argon|regional|flex|input|all:
+    sku: A99A-95C3-6B31
+    desc: Gemini 4 Argon Regional Text Input - Flex Predictions
+    usd_per_token: '0.0000022'
+    tiered: false
+  gemini-4-argon|regional|flex|output|all:
+    sku: 4F6A-9484-6548
+    desc: Gemini 4 Argon Regional Text Output - Flex Predictions
+    usd_per_token: '0.000011'
+    tiered: false
+  gemini-4-argon|regional|priority|cache_read|all:
+    sku: BE11-ED56-7825
+    desc: Gemini 4 Argon Regional Text Input Caching Priority
+    usd_per_token: '3.96E-7'
+    tiered: false
+  gemini-4-argon|regional|priority|input|all:
+    sku: A9E4-6185-C813
+    desc: Gemini 4 Argon Regional Text Input - Priority Predictions
+    usd_per_token: '0.00000792'
+    tiered: false
+  gemini-4-argon|regional|priority|output|all:
+    sku: F0A4-3337-930A
+    desc: Gemini 4 Argon Regional Text Output - Priority Predictions
+    usd_per_token: '0.0000396'
+    tiered: false
+  gemini-4-argon|regional|standard|cache_read|all:
+    sku: F61C-57E6-DBE0
+    desc: Gemini 4 Argon Regional Text Input Caching Online
+    usd_per_token: '2.2E-7'
+    tiered: false
+  gemini-4-argon|regional|standard|input|all:
+    sku: A891-E7A5-FDA5
+    desc: Gemini 4 Argon Regional Text Input - Online Predictions
+    usd_per_token: '0.0000044'
+    tiered: false
+  gemini-4-argon|regional|standard|output|all:
+    sku: EA0E-13A1-6B07
+    desc: Gemini 4 Argon Regional Text Output - Online Predictions
+    usd_per_token: '0.000022'
+    tiered: false

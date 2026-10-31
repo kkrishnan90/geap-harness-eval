@@ -1,0 +1,8 @@
+run: { name: dev-omp-cdr, repeats: 1, max_task_retries: 0, retry_mode: fresh }
+harnesses: [omp]
+model_profiles:
+  - { id: flash-low, mode: single, roles: { default: { model: gemini-3.8-flash, thinking: low } } }
+  - { id: opus-high, mode: single, roles: { default: { model: claude-opus-5-5, thinking: high } } }
+tasks: { include: ["telecom/cdr-tiered-tariff"] }
+budget: { enabled: true, max_usd_total: 4, max_usd_per_attempt: 2 }
+concurrency: { global: 2, per_harness: 2 }

@@ -1,0 +1,10 @@
+/.venv/
+__pycache__/
+/runs/
+/tools/
+/web/node_modules/
+/web/dist/
+/*.cast
+/.env
+# raw harness recordings (contain real project paths/identities) stay local
+/tests/fixtures/

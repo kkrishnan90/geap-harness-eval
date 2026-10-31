@@ -1,0 +1,4 @@
+stop_id;route_id;seq;postcode;lat;lon;window;parcels;notes
+S-2001;R-11;1;10115;52.5323;13.3846;09:00-12:00;2;"Hof, Seiteneingang"
+S-2002;R-11;2;10117;52.5170;13.3889;;5;
+S-2003;R-12;1;10178;52.5219;13.4132;13:00-17:00;1;

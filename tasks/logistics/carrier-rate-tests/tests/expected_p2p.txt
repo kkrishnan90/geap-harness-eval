@@ -1,0 +1,15 @@
+tests.test_zones.ZoneTest.test_far_regions
+tests.test_zones.ZoneTest.test_hub_region_is_zone_one
+tests.test_zones.ZoneTest.test_invalid
+tests.test_zones.ZoneTest.test_remote_islands
+tests.test_zones.ZoneTest.test_spaces_tolerated
+tests.test_labels.LabelTest.test_banner
+tests.test_labels.LabelTest.test_domestic_block
+tests.test_labels.LabelTest.test_foreign_country_line
+tests.test_labels.LabelTest.test_wraps_long_lines
+tests.test_tracking.TrackingTest.test_check_digit_range
+tests.test_tracking.TrackingTest.test_corruption_detected
+tests.test_tracking.TrackingTest.test_roundtrip
+tests.test_tracking.TrackingTest.test_shape
+tests.test_rates_reference.ReferenceQuoteTest.test_remote_oversize
+tests.test_rates_reference.ReferenceQuoteTest.test_zone_five_heavy

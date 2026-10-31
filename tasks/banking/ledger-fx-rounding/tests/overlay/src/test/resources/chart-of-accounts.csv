@@ -1,0 +1,12 @@
+# Meridian Treasury Services - chart of accounts (extract)
+1000;Cash EUR;ASSET;EUR
+1010;Nostro USD Citi NY;ASSET;USD
+1020;Nostro GBP Barclays;ASSET;GBP
+1030;Nostro JPY MUFG;ASSET;JPY
+1040;Nostro CHF UBS;ASSET;CHF
+1050;Nostro KWD NBK;ASSET;KWD
+2010;Customer deposits USD;LIABILITY;USD
+3000;Retained earnings;EQUITY;EUR
+4000;Fee income;INCOME;EUR
+6100;Correspondent charges;EXPENSE;EUR
+7900;Unrealised FX result;INCOME;EUR

@@ -1,0 +1,15 @@
+decision_table.test.ts::bulk: an earlier rejected item still blocks the same number
+decision_table.test.ts::bulk: duplicates inside the batch
+decision_table.test.ts::bulk: same rules as the single channels
+decision_table.test.ts::fixed: London and other geographic numbers
+decision_table.test.ts::fixed: account number case-insensitive; canonical order
+decision_table.test.ts::fixed: port date counts business days
+decision_table.test.ts::mobile: PAC is case-insensitive and trimmed
+decision_table.test.ts::mobile: all failing rules are reported in canonical order
+decision_table.test.ts::mobile: operators must offer mobile service
+rules_module.test.ts::bulk passes earlier batch numbers as open ports without mutating the context
+rules_module.test.ts::handlers build normalised candidates
+rules_module.test.ts::handlers delegate to the injected rule set
+rules_module.test.ts::rules module: canonical rule order
+rules_module.test.ts::rules module: custom rule list and order
+rules_module.test.ts::rules module: evaluate runs every rule

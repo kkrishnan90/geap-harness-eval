@@ -1,0 +1,9 @@
+[package]
+name = "sipcore"
+version = "1.6.2"
+edition = "2021"
+description = "SIP message parsing for the SBC signalling plane (edge proxy, registrar front end)"
+publish = false
+
+# std only: this crate is built in the restricted SBC build environment (no registry access).
+[dependencies]

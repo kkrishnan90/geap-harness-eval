@@ -1,0 +1,4 @@
+feeder_id,day,meters,wh_total,max_meter_wh
+FDR-21,2026-03-01,2,1320,810
+FDR-30,2026-03-01,1,90,90
+FDR-30,2026-03-02,1,165,165

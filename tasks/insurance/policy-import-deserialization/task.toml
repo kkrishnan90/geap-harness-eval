@@ -1,0 +1,9 @@
+id = "insurance/policy-import-deserialization"
+version = "1"
+title = "Block unsafe Java deserialization in the legacy policy batch upload"
+industry = "insurance"
+tier = "medium"
+sdlc_type = "security"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

@@ -1,0 +1,9 @@
+run: { name: dev-omp-agy, repeats: 1, max_task_retries: 0, retry_mode: fresh }
+harnesses: [omp, agy]
+model_profiles:
+  - { id: flash-low, mode: single, roles: { default: { model: gemini-3.8-flash, thinking: low } } }
+  - { id: opus-high, mode: single, roles: { default: { model: claude-opus-5-5,  thinking: high } } }
+tasks: { include: ["banking/iban-checksum-bug"] }
+limits: { quiescence_s: 8 }
+budget: { enabled: true, max_usd_total: 6, max_usd_per_attempt: 2 }
+concurrency: { global: 2, per_harness: 1 }

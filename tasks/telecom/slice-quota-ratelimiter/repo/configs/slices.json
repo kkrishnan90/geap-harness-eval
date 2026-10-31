@@ -1,0 +1,8 @@
+{"version": 1, "slices": [
+  {"snssai": "1-000001", "aggregate": {"rate_per_sec": 125000000, "burst": 250000000},
+   "per_subscriber": {"rate_per_sec": 12500000, "burst": 25000000}},
+  {"snssai": "2-0000a1", "aggregate": {"rate_per_sec": 2000000, "burst": 2000000},
+   "per_subscriber": {"rate_per_sec": 50000, "burst": 100000}},
+  {"snssai": "3", "aggregate": {"rate_per_sec": 10000, "burst": 50000},
+   "per_subscriber": {"rate_per_sec": 10, "burst": 100}}
+]}

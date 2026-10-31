@@ -1,0 +1,22 @@
+e164.test.ts::GB national mobile with trunk prefix
+e164.test.ts::DE international with plus and separators
+e164.test.ts::FR national landline
+e164.test.ts::letters are rejected
+e164.test.ts::empty input is rejected
+e164.test.ts::unknown default region
+e164.test.ts::wrong NSN length
+e164.test.ts::formatInternational splits the country code
+msisdn.test.ts::mask keeps prefix and last digits
+msisdn.test.ts::mask short numbers fully
+msisdn.test.ts::range membership
+porting.test.ts::latest port wins
+porting.test.ts::home routing number for non-ported numbers
+e164_dialling.test.ts::NANP national ten digits
+e164_dialling.test.ts::Italian landline keeps leading zero (international input)
+e164_dialling.test.ts::Italian mobile
+e164_dialling.test.ts::plus with unassigned country code
+e164_dialling.test.ts::three digit country code
+e164_dialling.test.ts::national number without trunk prefix
+e164_dialling.test.ts::Singapore has no trunk prefix
+e164_dialling.test.ts::UAE national
+e164_dialling.test.ts::region code is case-insensitive

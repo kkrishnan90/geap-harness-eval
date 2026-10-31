@@ -1,0 +1,11 @@
+{
+  "name": "@numbering/core",
+  "version": "2.7.0",
+  "private": true,
+  "description": "Number normalisation, masking and portability helpers for the provisioning and mediation services",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}

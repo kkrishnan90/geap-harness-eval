@@ -1,0 +1,9 @@
+id = "oem-devices/ota-manifest-verify"
+version = "1"
+title = "OTA manifest format 2: anti-rollback and per-chunk digest verification"
+industry = "oem-devices"
+tier = "medium"
+sdlc_type = "feature"
+languages = ["rust"]
+timeout_s = 900
+requires = ["cargo"]

@@ -1,0 +1,9 @@
+id = "telecom/sip-parser-hardening"
+version = "1"
+title = "Harden the SBC SIP parser against malformed and hostile messages"
+industry = "telecom"
+tier = "complex"
+sdlc_type = "security"
+languages = ["rust"]
+timeout_s = 900
+requires = ["cargo"]

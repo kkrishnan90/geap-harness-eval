@@ -1,0 +1,242 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/jetbrains-mono';
+@import 'tailwindcss';
+@import '@xterm/xterm/css/xterm.css';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+  Graphite system. One signature accent (iris) for chrome only;
+  data colors (token categories, status, cost badges) are their own families.
+*/
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0b0d;
+  --bg-grain: #0d0f12;
+  --panel: #111317;
+  --raised: #171a1f;
+  --sunken: #0c0d10;
+  --hover: #1c2026;
+  --line: #22262d;
+  --line-strong: #2e333b;
+  --fg: #e8eaee;
+  --fg-2: #b4bac4;
+  --muted: #7d8591;
+  --faint: #545b66;
+
+  --accent: #7c6cff;
+  --accent-fg: #ffffff;
+  --accent-soft: color-mix(in oklab, #7c6cff 16%, transparent);
+  --accent-line: color-mix(in oklab, #7c6cff 45%, transparent);
+
+  --pass: #3ccf8e;
+  --fail: #f0585e;
+  --warn: #f5b83d;
+  --run: #7c6cff;
+  --idle: #5b6270;
+
+  --cost-verified: #4c9aff;
+  --cost-check: #ff9f43;
+  --cost-unpriced: #f0585e;
+  --cost-reconciled: #3ccf8e;
+
+  --tok-input: #4f8ef7;
+  --tok-cache-read: #2cb89d;
+  --tok-cache-write: #8bd3e6;
+  --tok-output: #e6e1d3;
+  --tok-thinking: #e66fa8;
+
+  --term-bg: #0b0c0f;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f5f7;
+  --bg-grain: #eef0f3;
+  --panel: #ffffff;
+  --raised: #f7f8fa;
+  --sunken: #eceef2;
+  --hover: #eef0f4;
+  --line: #e2e5ea;
+  --line-strong: #d0d4db;
+  --fg: #14161a;
+  --fg-2: #3b414b;
+  --muted: #646b77;
+  --faint: #9aa1ac;
+
+  --accent: #5b4bf0;
+  --accent-fg: #ffffff;
+  --accent-soft: color-mix(in oklab, #5b4bf0 10%, transparent);
+  --accent-line: color-mix(in oklab, #5b4bf0 40%, transparent);
+
+  --pass: #13a26b;
+  --fail: #d93a42;
+  --warn: #c98a07;
+  --run: #5b4bf0;
+  --idle: #9aa1ac;
+
+  --cost-verified: #2a74e0;
+  --cost-check: #e07a12;
+  --cost-unpriced: #d93a42;
+  --cost-reconciled: #13a26b;
+
+  --tok-input: #3b76e0;
+  --tok-cache-read: #14967e;
+  --tok-cache-write: #49a9c4;
+  --tok-output: #2b2e35;
+  --tok-thinking: #cf4a8c;
+
+  --term-bg: #0f1114;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px -8px rgba(16, 24, 40, 0.12);
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-raised: var(--raised);
+  --color-sunken: var(--sunken);
+  --color-hover: var(--hover);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-line: var(--accent-line);
+  --color-pass: var(--pass);
+  --color-fail: var(--fail);
+  --color-warn: var(--warn);
+  --color-run: var(--run);
+  --color-idle: var(--idle);
+  --color-verified: var(--cost-verified);
+  --color-check: var(--cost-check);
+  --color-unpriced: var(--cost-unpriced);
+  --color-term: var(--term-bg);
+
+  --text-2xs: 10.5px;
+  --text-2xs--line-height: 14px;
+}
+
+* {
+  border-color: var(--line);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.num,
+.font-mono {
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-feature-settings: 'zero', 'tnum';
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* the tape: signature live trial strip */
+@keyframes tape-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.tape-running {
+  animation: tape-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes live-dot {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--pass) 60%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.live-dot {
+  animation: live-dot 2s ease-out infinite;
+}
+
+.xterm {
+  padding: 8px 10px;
+}
+.xterm-viewport {
+  background: transparent !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* command palette */
+[cmdk-group-heading] {
+  padding: 8px 10px 4px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+[cmdk-input]:focus-visible {
+  outline: none;
+}

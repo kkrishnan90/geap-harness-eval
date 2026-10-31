@@ -1,0 +1,11 @@
+e164_dialling.test.ts::NANP number in international format
+e164_dialling.test.ts::NANP national with leading trunk 1
+e164_dialling.test.ts::Italian landline keeps leading zero (national input)
+e164_dialling.test.ts::GB international prefix 00
+e164_dialling.test.ts::US international prefix 011
+e164_dialling.test.ts::AU international prefix 0011
+e164_dialling.test.ts::JP international prefix 010 to NANP
+e164_dialling.test.ts::bracketed trunk prefix after plus country code
+e164_dialling.test.ts::bracketed trunk prefix after international prefix
+e164_dialling.test.ts::international prefix with unassigned country code
+e164_dialling.test.ts::NANP wrong length after trunk

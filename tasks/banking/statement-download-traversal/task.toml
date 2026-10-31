@@ -1,0 +1,9 @@
+id = "banking/statement-download-traversal"
+version = "1"
+title = "Fix path traversal in the statement PDF download endpoint"
+industry = "banking"
+tier = "simple"
+sdlc_type = "security"
+languages = ["go"]
+timeout_s = 600
+requires = ["go"]

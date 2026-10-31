@@ -1,0 +1,9 @@
+id = "telecom/slice-quota-ratelimiter"
+version = "1"
+title = "Hierarchical per-slice / per-subscriber quota limiter for the 5G PCF"
+industry = "telecom"
+tier = "medium"
+sdlc_type = "feature"
+languages = ["go"]
+timeout_s = 600
+requires = ["go"]

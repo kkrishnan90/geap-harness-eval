@@ -1,0 +1,17 @@
+// bootcfg-tools pipeline (host build + unit tests)
+pipeline {
+    agent { label 'macos-clang' }
+    options { timeout(time: 15, unit: 'MINUTES') }
+    stages {
+        stage('Build + test') {
+            steps {
+                sh 'make ci'
+            }
+        }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'build/libbootcfg.a', fingerprint: true
+            }
+        }
+    }
+}

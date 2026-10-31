@@ -1,0 +1,10 @@
+# Source uploaded to Cloud Build. Root-anchored only: task repos ship their own tools/, tests/fixtures/, etc.
+/.venv/
+/runs/
+/tools/
+/web/node_modules/
+/web/dist/
+/tests/fixtures/
+**/__pycache__/
+.DS_Store
+/.env

@@ -1,0 +1,9 @@
+id = "retail/promo-expiry-timezone"
+version = "1"
+title = "Fix promotion expiry off-by-one across time zones and DST"
+industry = "retail"
+tier = "simple"
+sdlc_type = "bug-fix"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

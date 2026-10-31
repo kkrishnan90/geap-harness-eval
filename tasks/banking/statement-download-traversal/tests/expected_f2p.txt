@@ -1,0 +1,7 @@
+TestDownloadEncodedTraversal
+TestDownloadPrefixCheckBypass
+TestDownloadTraversalAudited
+TestOpenRejectsAbsoluteNames
+TestOpenRejectsMalformedNames
+TestOpenRejectsParentSegments
+TestOpenRejectsSymlinkEscape

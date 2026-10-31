@@ -1,0 +1,6 @@
+ci.make_ci_succeeds
+ci.tests_actually_run
+ci.failing_test_fails_build
+ci.header_change_rebuilds
+bounds.lone_type_byte_is_truncated
+bounds.verify_rejects_block_cut_inside_crc_header

@@ -1,0 +1,9 @@
+id = "telecom/number-port-refactor"
+version = "1"
+title = "Consolidate drifted number-porting validation into a shared rules module"
+industry = "telecom"
+tier = "medium"
+sdlc_type = "refactor"
+languages = ["typescript"]
+timeout_s = 600
+requires = ["node"]

@@ -1,0 +1,9 @@
+{
+  "code": "RES-FLAT-2025",
+  "zones": [
+    {"name": "national", "prefix": "34", "rate_per_minute": "0.0350"},
+    {"name": "mobile", "prefix": "346", "rate_per_minute": "0.0700"},
+    {"name": "eu", "prefix": "33", "rate_per_minute": "0.1200"},
+    {"name": "eu", "prefix": "49", "rate_per_minute": "0.1200"}
+  ]
+}

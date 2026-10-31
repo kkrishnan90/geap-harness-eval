@@ -1,0 +1,9 @@
+id = "healthcare/phi-redaction"
+version = "1"
+title = "Format-aware PHI redaction with audit trail for the log sidecar"
+industry = "healthcare"
+tier = "complex"
+sdlc_type = "feature"
+languages = ["python"]
+timeout_s = 1800
+requires = ["python3"]

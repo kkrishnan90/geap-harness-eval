@@ -1,0 +1,9 @@
+[package]
+name = "pickplan"
+version = "2.3.0"
+edition = "2021"
+description = "Pick-wave planner for the DC-07 high-bay warehouse: order batching and picker routing"
+publish = false
+
+# Runs inside the WMS appliance build, which has no registry access: std only.
+[dependencies]

@@ -1,0 +1,9 @@
+id = "banking/ledger-fx-rounding"
+version = "1"
+title = "Fix FX revaluation drift and rounding in the multi-currency ledger"
+industry = "banking"
+tier = "complex"
+sdlc_type = "bug-fix"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

@@ -1,0 +1,11 @@
+{
+  "name": "@clinic/fhir-lite",
+  "version": "0.9.3",
+  "private": true,
+  "description": "In-memory FHIR R4 store and search used by the clinic integration engine test harness and the offline kiosk cache",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}

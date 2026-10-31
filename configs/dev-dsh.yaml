@@ -1,0 +1,8 @@
+run: { name: dev-dsh, repeats: 1, max_task_retries: 0, retry_mode: fresh }
+harnesses: [dsh/web-ptc]
+model_profiles:
+  - { id: flash-low, mode: single, roles: { default: { model: gemini-3.8-flash, thinking: low } } }
+tasks: { include: ["banking/iban-checksum-bug"] }
+limits: { quiescence_s: 8 }
+budget: { enabled: true, max_usd_total: 2, max_usd_per_attempt: 1 }
+concurrency: { global: 1, per_harness: 1 }

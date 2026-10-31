@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "repository": "registry.internal/retail/checkout",
+    "tag": "2.15.0-rc.3",
+    "digest": "sha256:adcd5e5241b9398ecfb4ba20fc06df16402d3da18e54709a3f548266f83c3ed7"
+  },
+  "staging": {
+    "repository": "registry.internal/retail/checkout",
+    "tag": "2.14.1",
+    "digest": "sha256:056d9b3f7b356ff28e0386e4f114912de373240e7d6c2a545b6268356b697e1e"
+  },
+  "prod": {
+    "repository": "registry.internal/retail/checkout",
+    "tag": "2.14.1",
+    "digest": "sha256:056d9b3f7b356ff28e0386e4f114912de373240e7d6c2a545b6268356b697e1e"
+  }
+}

@@ -1,0 +1,9 @@
+id = "logistics/pick-path-optimizer"
+version = "1"
+title = "Cut distance-oracle lookups in pick-wave planning (batching + 2-opt routing)"
+industry = "logistics"
+tier = "complex"
+sdlc_type = "performance"
+languages = ["rust"]
+timeout_s = 900
+requires = ["cargo"]

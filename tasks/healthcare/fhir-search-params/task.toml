@@ -1,0 +1,9 @@
+id = "healthcare/fhir-search-params"
+version = "1"
+title = "FHIR R4 search: modifiers, date prefixes, token systems, OR/AND, _sort and errors"
+industry = "healthcare"
+tier = "medium"
+sdlc_type = "feature"
+languages = ["typescript"]
+timeout_s = 600
+requires = ["node"]

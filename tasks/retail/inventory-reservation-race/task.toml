@@ -1,0 +1,9 @@
+id = "retail/inventory-reservation-race"
+version = "1"
+title = "Fix overselling under concurrent checkout without a global lock"
+industry = "retail"
+tier = "complex"
+sdlc_type = "bug-fix"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

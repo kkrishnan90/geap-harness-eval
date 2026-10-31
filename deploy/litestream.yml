@@ -1,0 +1,6 @@
+# SQLite on local disk, continuously replicated to GCS (Cloud Run disk is ephemeral). Auth: metadata-server ADC.
+dbs:
+  - path: ${GEAP_DB_PATH}
+    replica:
+      url: ${GEAP_DB_REPLICA_URL}
+      sync-interval: 1s

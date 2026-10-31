@@ -1,0 +1,9 @@
+agent_tests_pass_on_reference
+mutant::early_claim_window_exclusive
+mutant::fast_track_ignores_shared_account
+mutant::frequency_ignores_claimant
+mutant::frequency_window_exclusive
+mutant::high_amount_strict
+mutant::iban_not_normalised
+mutant::late_reporting_inclusive
+mutant::siu_threshold_strict

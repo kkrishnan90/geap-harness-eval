@@ -1,0 +1,7 @@
+TestIntervalDecodeCSV
+TestIntervalDecodeCSVErrors
+TestVeeCleanDayHasNoIssues
+TestHiddenReferenceMixedDay
+TestObisParseFull
+TestObisParseShort
+TestObisParseErrors

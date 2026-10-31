@@ -1,0 +1,9 @@
+id = "banking/pain001-batch-booking"
+version = "1"
+title = "Support the pain.001 batch booking flag with batch validation rules"
+industry = "banking"
+tier = "medium"
+sdlc_type = "feature"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

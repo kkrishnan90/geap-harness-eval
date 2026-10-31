@@ -1,0 +1,11 @@
+hidden/actual_beats_estimate/daily
+hidden/actual_beats_estimate/kept_rows
+hidden/interval_counts_never_null/counts
+hidden/meter_moved_feeder/daily
+hidden/meter_moved_feeder/feeder_report
+hidden/null_reads_ignored/daily
+hidden/null_reads_ignored/kept_rows
+hidden/rerun_idempotent/rerun
+hidden/resend_latest_wins/daily
+hidden/resend_latest_wins/kept_rows
+hidden/same_receipt_tiebreak/kept_rows

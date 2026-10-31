@@ -1,0 +1,11 @@
+{
+  "name": "@porting/gateway",
+  "version": "4.1.2",
+  "private": true,
+  "description": "Number portability request intake (mobile PAC ports, fixed-line ports, wholesale bulk ports)",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}

@@ -1,0 +1,9 @@
+id = "energy/meter-validation-tests"
+version = "1"
+title = "Write unit tests that pin down the MDM VEE validation and estimation rules"
+industry = "energy"
+tier = "medium"
+sdlc_type = "test-authoring"
+languages = ["go"]
+timeout_s = 900
+requires = ["go"]

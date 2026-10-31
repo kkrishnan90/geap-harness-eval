@@ -1,0 +1,12 @@
+stacking.test.ts::bogo counts complete groups per line only
+stacking.test.ts::bogo runs first and percent applies to what is left
+stacking.test.ts::equal priority falls back to promotion id order
+stacking.test.ts::exclusivity group keeps the member with the largest standalone discount
+stacking.test.ts::exclusivity ties: lower priority number, then id
+stacking.test.ts::lower priority number runs first within a phase, on the reduced amount
+stacking.test.ts::minimum subtotal is checked before exclusivity; rejected keeps input order
+stacking.test.ts::per-line cap limits each line separately for every kind
+stacking.test.ts::percent applies before fixed regardless of priority and input order
+stacking.test.ts::pricing is pure for stacked input
+stacking.test.ts::promotion that matches nothing is reported as no effect
+stacking.test.ts::stacked discounts never take a line below zero

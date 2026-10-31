@@ -1,0 +1,29 @@
+# Cloud Build (linux/amd64 workers): build -> push :candidate -> validate all 36 tasks in-image -> smoke -> tag :latest.
+substitutions:
+  _IMAGE: us-central1-docker.pkg.dev/${PROJECT_ID}/geap-eval/geap-eval
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_IMAGE}:${BUILD_ID}", "-t", "${_IMAGE}:candidate", "."]
+  - id: push-candidate
+    name: gcr.io/cloud-builders/docker
+    args: ["push", "${_IMAGE}:candidate"]
+  - id: debug-route-batch
+    name: gcr.io/cloud-builders/docker
+    args: ["run", "--rm", "--entrypoint", "bash", "${_IMAGE}:${BUILD_ID}", "-c",
+           "W=$$(mktemp -d); cp -R tasks/logistics/route-batch-csv-ingest/repo/. $$W/; cp -R tasks/logistics/route-batch-csv-ingest/solution/files/. $$W/; ls -la $$W $$W/tools || true; which python3; python3 --version; cd /tmp && PYTHONHASHSEED=1 bash $$W/scripts/ci.sh; echo EXIT=$$?"]
+  - id: validate-tasks
+    name: gcr.io/cloud-builders/docker
+    args: ["run", "--rm", "--entrypoint", "/app/.venv/bin/python", "${_IMAGE}:${BUILD_ID}", "scripts/validate_tasks.py"]
+  - id: smoke
+    name: gcr.io/cloud-builders/docker
+    args: ["run", "--rm", "--entrypoint", "bash", "${_IMAGE}:${BUILD_ID}", "-c",
+           "set -e; for b in claude pi omp dsh; do ls tools/*/node_modules/.bin/$$b; done; tools/agy/bin/agy --version; tools/claude_code/node_modules/.bin/claude --version; litestream version; node --version; go version; cargo --version; javac -version; python3 --version"]
+  - id: tag-latest
+    name: gcr.io/cloud-builders/docker
+    args: ["tag", "${_IMAGE}:${BUILD_ID}", "${_IMAGE}:latest"]
+images: ["${_IMAGE}:${BUILD_ID}", "${_IMAGE}:latest"]
+options:
+  machineType: E2_HIGHCPU_8
+  diskSizeGb: 200
+timeout: 5400s

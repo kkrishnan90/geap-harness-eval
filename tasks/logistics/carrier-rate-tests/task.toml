@@ -1,0 +1,9 @@
+id = "logistics/carrier-rate-tests"
+version = "1"
+title = "Write unit tests for the parcel rating rules (tariff 2026-Q3)"
+industry = "logistics"
+tier = "simple"
+sdlc_type = "test-authoring"
+languages = ["python"]
+timeout_s = 600
+requires = ["python3"]

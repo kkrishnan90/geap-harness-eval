@@ -1,0 +1,14 @@
+# Synthetic messages only. No real patient data.
+ORU = (
+    "MSH|^~\\&|LABSYS|NORTHLAB|EHR|GENHOSP|20260314083000+0100||ORU^R01|MSG00042|P|2.5\r"
+    "PID|1||MRN0012345^^^GENHOSP^MR||TESTPATIENT^ALEX^Q||19800101|U\r"
+    "OBR|1|ORD778|FIL778|24331-1^Lipid panel^LN\r"
+    "OBX|1|NM|2093-3^Cholesterol^LN||182|mg/dL|<200|N|||F\r"
+    "OBX|2|ST|NOTE^Comment^L||Fasting sample\\S\\verified|||||F\r"
+)
+
+ADT = (
+    "MSH|^~\\&|ADMIT|GENHOSP|BILLING|GENHOSP|20260314090000||ADT^A01|ADT0007|P|2.5\r"
+    "PID|1||MRN0099~ALT0099||DOE^JORDAN||19910704|X\r"
+    "PV1|1|I|WARD3^R12^B1\r"
+)

@@ -1,0 +1,10 @@
+[package]
+name = "ota-agent"
+version = "0.9.4"
+edition = "2021"
+description = "On-device OTA update agent: manifest parsing, image verification, A/B slot management"
+publish = false
+
+# No external crates: this crate is built for the TCU firmware toolchain, which has no
+# registry access. Cryptographic primitives we need are vendored under src/.
+[dependencies]

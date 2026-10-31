@@ -1,0 +1,9 @@
+id = "energy/smart-meter-dedupe"
+version = "1"
+title = "Fix smart-meter reading dedupe and daily rollup SQL (sqlite3)"
+industry = "energy"
+tier = "medium"
+sdlc_type = "bug-fix"
+languages = ["sql"]
+timeout_s = 600
+requires = ["sqlite3"]

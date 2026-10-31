@@ -1,0 +1,9 @@
+id = "retail/deploy-manifest-policy"
+version = "1"
+title = "Repair the red deployment-policy CI for checkout-service manifests"
+industry = "retail"
+tier = "simple"
+sdlc_type = "ci-repair"
+languages = ["json", "python"]
+timeout_s = 600
+requires = ["python3"]

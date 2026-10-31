@@ -1,0 +1,11 @@
+# Smallest end-to-end run: 2 simple tasks x 1 profile x all harnesses, 1 repeat.
+run: { name: smoke, repeats: 1, max_task_retries: 1, retry_mode: fresh }
+geap: { location: auto }   # project + identity come from .env (GEAP_PROJECT / GEAP_IDENTITY)
+harnesses: [claude_code, pi, omp, dsh/web-ptc, agy]
+model_profiles:
+  - { id: flash-low, mode: single, roles: { default: { model: gemini-3.8-flash, thinking: low } } }
+  - { id: opus-low,  mode: single, roles: { default: { model: claude-opus-5-5,  thinking: low } } }
+tasks: { include: ["banking/iban-checksum-bug", "retail/promo-expiry-timezone"], tiers: [simple] }
+limits: { quiescence_s: 10, max_nudges: 2 }
+budget: { enabled: true, max_usd_total: 10, max_usd_per_attempt: 2, on_exceed: pause }
+concurrency: { global: 2, per_harness: 1 }

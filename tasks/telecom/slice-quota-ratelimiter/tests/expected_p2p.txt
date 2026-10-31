@@ -1,0 +1,14 @@
+TestSnssaiParseRoundTrip
+TestSnssaiParseNoSD
+TestSnssaiParseErrors
+TestSnssaiNewRejectsWideSD
+TestChargingIDInstanceBits
+TestChargingIDRejectsInstance
+TestPolicyDecode
+TestPolicyRejectsUnknownField
+TestPolicyRejectsVersion
+TestSpecValidateOK
+TestSpecValidateRejectsZeroRate
+TestSpecValidateRejectsDuplicate
+TestFakeClockAdvance
+TestFakeClockSetBackwards

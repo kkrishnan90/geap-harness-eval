@@ -1,0 +1,85 @@
+{
+ "fetched_at": 1793380166.403132,
+ "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+ "checks": [
+  {
+   "model": "gemini-4-argon",
+   "category": "input",
+   "catalog_per_1m": 4.0,
+   "page_per_1m": 4.0,
+   "ok": true,
+   "quote": "Gemini 4 Argon (Starting December 1, 2026), Gemini 4 Argon Cyber Permissive Input (text, image, video, audio) Global $4.00 $0.20 Non-global $4.40 $0.22 Text output (response and reasoning) Global $20.00"
+  },
+  {
+   "model": "gemini-4-argon",
+   "category": "cache_read",
+   "catalog_per_1m": 0.2,
+   "page_per_1m": 0.2,
+   "ok": true,
+   "quote": "Gemini 4 Argon (Starting December 1, 2026), Gemini 4 Argon Cyber Permissive Input (text, image, video, audio) Global $4.00 $0.20 Non-global $4.40 $0.22 Text output (response and reasoning) Global $20.00"
+  },
+  {
+   "model": "gemini-4-argon",
+   "category": "output",
+   "catalog_per_1m": 20.0,
+   "page_per_1m": 20.0,
+   "ok": true,
+   "quote": "Gemini 4 Argon (Starting December 1, 2026), Gemini 4 Argon Cyber Permissive Input (text, image, video, audio) Global $4.00 $0.20 Non-global $4.40 $0.22 Text output (response and reasoning) Global $20.00"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "category": "input",
+   "catalog_per_1m": 1.5,
+   "page_per_1m": 1.5,
+   "ok": true,
+   "quote": "Gemini 3.8 Flash, Gemini 3.7 Flash, Gemini 3.6 Flash, and CodeMender using these models are offered with introductory pricing of $0.75 / $3.75 per 1M tokens input / output through December 31, 2026. Starting January 1, 2027, standard pricin"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "category": "output",
+   "catalog_per_1m": 7.5,
+   "page_per_1m": 7.5,
+   "ok": true,
+   "quote": "Gemini 3.8 Flash, Gemini 3.7 Flash, Gemini 3.6 Flash, and CodeMender using these models are offered with introductory pricing of $0.75 / $3.75 per 1M tokens input / output through December 31, 2026. Starting January 1, 2027, standard pricin"
+  }
+ ],
+ "promotions": [
+  {
+   "id": "argon-credits-2026",
+   "models": [
+    "gemini-4-argon"
+   ],
+   "locality": [
+    "global",
+    "regional"
+   ],
+   "until": "2026-11-30",
+   "factor": {
+    "input": 0.5,
+    "cache_read": 0.5,
+    "output": 0.5
+   },
+   "mechanism": "50% credits back on net spend on select models within a given period",
+   "quote": "Gemini 4 Argon* through November 30, 2026 Input (text, image, video, audio) Global $2.00 $0.10 Non-global $2.20 $0.11 Text output (response and reasoning) Global $10.00",
+   "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing"
+  },
+  {
+   "id": "flash-3.8-intro-2026",
+   "models": [
+    "gemini-3.8-flash"
+   ],
+   "locality": [
+    "global",
+    "regional"
+   ],
+   "until": "2026-12-31",
+   "factor": {
+    "input": 0.5,
+    "output": 0.5
+   },
+   "mechanism": "introductory pricing (cache_read not stated: list price kept)",
+   "quote": "Gemini 3.8 Flash, Gemini 3.7 Flash, Gemini 3.6 Flash, and CodeMender using these models are offered with introductory pricing of $0.75 / $3.75 per 1M tokens input / output through December 31, 2026. Starting January 1, 2027, standard pricing of $1.5 / $7.5",
+   "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing"
+  }
+ ]
+}

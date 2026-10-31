@@ -1,0 +1,12 @@
+engine.test.ts::input is not mutated
+engine.test.ts::minimum subtotal not met
+engine.test.ts::no promotions
+engine.test.ts::single fixed promotion is per line and never below zero
+engine.test.ts::single percent promotion on a category
+engine.test.ts::validation helpers
+money.test.ts::mulDiv is symmetric for negatives
+money.test.ts::percentOf rounds half up to the cent
+money.test.ts::sum and formatting
+tax_shipping.test.ts::VAT breakdown groups per rate
+tax_shipping.test.ts::VAT contained in inclusive price
+tax_shipping.test.ts::shipping threshold and bulky surcharge

@@ -1,0 +1,9 @@
+id = "retail/cart-stackable-promos"
+version = "1"
+title = "Stackable cart promotions with priorities, exclusivity groups, BOGO and per-line caps"
+industry = "retail"
+tier = "medium"
+sdlc_type = "feature"
+languages = ["typescript"]
+timeout_s = 600
+requires = ["node"]

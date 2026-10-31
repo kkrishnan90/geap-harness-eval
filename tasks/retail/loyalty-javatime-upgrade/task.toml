@@ -1,0 +1,9 @@
+id = "retail/loyalty-javatime-upgrade"
+version = "1"
+title = "Migrate the loyalty points service from java.util.Date to java.time"
+industry = "retail"
+tier = "medium"
+sdlc_type = "upgrade"
+languages = ["java"]
+timeout_s = 900
+requires = ["javac"]

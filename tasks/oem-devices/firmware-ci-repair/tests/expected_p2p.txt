@@ -1,0 +1,15 @@
+ci.warning_flags_kept
+tlv.put_and_iterate
+tlv.pad_bytes_skipped
+tlv.value_truncated
+tlv.put_out_of_space
+tlv.seal_and_verify
+fwver.parse_release_and_rc
+fwver.parse_rejects
+fwver.compare_orders_rc_before_release
+fwver.format_roundtrip
+crc32.check_value
+crc32.empty
+crc32.incremental_matches_oneshot
+bounds.header_only_at_end
+bounds.exact_fit_value

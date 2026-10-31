@@ -1,0 +1,10 @@
+gfsm.table_matches_design
+gfsm.names
+gfsm.guards
+gfsm.find_agrees_with_runtime
+gfsm.action_hook_override
+gfsm.observer_sees_taken_transitions
+gfsm.dispatch_returns_table_row
+gfsm.pairing_timeout_disconnects
+structure.no_state_switch
+structure.conn_mgr_is_facade

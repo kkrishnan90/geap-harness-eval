@@ -1,0 +1,5 @@
+MSH|^~\&|EPICADT|GENHOSP|LABSYS|GENHOSP|20260304101502||ADT^A08|MSG000917|P|2.5.1
+PID|1||MRN0004711^^^GENHOSP^MR||TESTPATIENT^ALPHA^Q||19700101|F|||100 FAKE ST^^SPRINGFIELD^ZZ^00000||555-0100-0000|||||ACCT9001|000-12-3456
+{"ts": "2026-03-04T10:15:03Z", "level": "info", "service": "portal-api", "msg": "profile updated", "patient_name": "Jane Doe", "email": "jane.doe@example.org"}
+2026-03-04T10:15:04Z INFO gw method=GET path=/api/patients/MRN0004711/chart status=200 user=dr.example mrn=MRN0004711 latency_ms=41
+2026-03-04T10:15:05Z WARN scheduler: reminder bounced for patient (DOB 1970-01-01), callback 555-010-4477
